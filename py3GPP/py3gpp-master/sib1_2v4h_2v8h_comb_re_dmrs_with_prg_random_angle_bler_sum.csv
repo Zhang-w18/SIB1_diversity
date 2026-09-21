@@ -1,0 +1,19 @@
+Config,Family,Scheme,PRG_Size_RB,Precoding_Mode,CE_Mode,Precoding_Basis,DMRS_Pattern,N_Coarse_SSB,N_Fine_Beams,Channel_Model,CDL_Type,Random_AOD_Rotation,Angle_Gap_Max_Deg,SNR(dB),BLER
+"Comb-DMRS-array-data-sum: qh_a/qh_b simultaneous data, coherent H1+H2",array_based,array_comb_re_dmrs_data_sum,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-17,0.8097165991902834
+"Comb-DMRS-array-data-sum: qh_a/qh_b simultaneous data, coherent H1+H2",array_based,array_comb_re_dmrs_data_sum,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-15,0.6688963210702341
+"Comb-DMRS-array-data-sum: qh_a/qh_b simultaneous data, coherent H1+H2",array_based,array_comb_re_dmrs_data_sum,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-13,0.4807692307692308
+"Comb-DMRS-array-data-sum: qh_a/qh_b simultaneous data, coherent H1+H2",array_based,array_comb_re_dmrs_data_sum,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-11,0.36968576709796674
+"Comb-DMRS-array-data-sum: qh_a/qh_b simultaneous data, coherent H1+H2",array_based,array_comb_re_dmrs_data_sum,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-9,0.2185792349726776
+"Comb-DMRS-array-data-sum: qh_a/qh_b simultaneous data, coherent H1+H2",array_based,array_comb_re_dmrs_data_sum,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-7,0.11689070718877849
+"Comb-DMRS-array-data-sum: qh_a/qh_b simultaneous data, coherent H1+H2",array_based,array_comb_re_dmrs_data_sum,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-5,0.065
+"Comb-DMRS-array-data-sum: qh_a/qh_b simultaneous data, coherent H1+H2",array_based,array_comb_re_dmrs_data_sum,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-3,0.030333333333333334
+"Comb-DMRS-array-data-sum: qh_a/qh_b simultaneous data, coherent H1+H2",array_based,array_comb_re_dmrs_data_sum,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-1,0.015333333333333332
+"Comb-DMRS-precoding-data-sum: [1,1]/[1,j] simultaneous data, coherent H1+H2",precoding_based,precoding_comb_re_dmrs_data_sum,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-17,0.6600660066006601
+"Comb-DMRS-precoding-data-sum: [1,1]/[1,j] simultaneous data, coherent H1+H2",precoding_based,precoding_comb_re_dmrs_data_sum,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-15,0.5221932114882507
+"Comb-DMRS-precoding-data-sum: [1,1]/[1,j] simultaneous data, coherent H1+H2",precoding_based,precoding_comb_re_dmrs_data_sum,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-13,0.36101083032490977
+"Comb-DMRS-precoding-data-sum: [1,1]/[1,j] simultaneous data, coherent H1+H2",precoding_based,precoding_comb_re_dmrs_data_sum,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-11,0.25316455696202533
+"Comb-DMRS-precoding-data-sum: [1,1]/[1,j] simultaneous data, coherent H1+H2",precoding_based,precoding_comb_re_dmrs_data_sum,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-9,0.15810276679841898
+"Comb-DMRS-precoding-data-sum: [1,1]/[1,j] simultaneous data, coherent H1+H2",precoding_based,precoding_comb_re_dmrs_data_sum,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-7,0.10325245224574084
+"Comb-DMRS-precoding-data-sum: [1,1]/[1,j] simultaneous data, coherent H1+H2",precoding_based,precoding_comb_re_dmrs_data_sum,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-5,0.054
+"Comb-DMRS-precoding-data-sum: [1,1]/[1,j] simultaneous data, coherent H1+H2",precoding_based,precoding_comb_re_dmrs_data_sum,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-3,0.021666666666666667
+"Comb-DMRS-precoding-data-sum: [1,1]/[1,j] simultaneous data, coherent H1+H2",precoding_based,precoding_comb_re_dmrs_data_sum,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,True,15,-1,0.0

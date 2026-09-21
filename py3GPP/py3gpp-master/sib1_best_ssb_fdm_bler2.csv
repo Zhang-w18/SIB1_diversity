@@ -1,0 +1,46 @@
+Config,SNR(dB),BLER
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-25.0,1.0
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-24.0,1.0
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-23.0,1.0
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-22.0,0.9803921568627451
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-21.0,0.9090909090909091
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-20.0,0.6329113924050633
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-19.0,0.27932960893854747
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-18.0,0.14492753623188406
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-17.0,0.029958058717795086
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-16.0,0.0
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-15.0,0.0
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-14.0,0.0
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-13.0,0.0
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-12.0,0.0
+1. Before Refinement: 4-Ant Coarse Beam (96RB CE),-11.0,0.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-25.0,1.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-24.0,1.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-23.0,1.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-22.0,0.9259259259259259
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-21.0,0.7246376811594203
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-20.0,0.43103448275862066
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-19.0,0.13262599469496023
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-18.0,0.03736920777279522
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-17.0,0.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-16.0,0.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-15.0,0.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-14.0,0.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-13.0,0.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-12.0,0.0
+2. During Refinement: 8-Ant FDM Sweeping (48RB CE),-11.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-25.0,0.9090909090909091
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-24.0,0.7575757575757576
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-23.0,0.3125
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-22.0,0.11547344110854503
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-21.0,0.026737967914438502
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-20.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-19.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-18.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-17.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-16.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-15.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-14.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-13.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-12.0,0.0
+3. After Refinement: 8-Ant Pure Fine Beam (96RB CE),-11.0,0.0

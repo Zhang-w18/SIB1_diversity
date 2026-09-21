@@ -1,0 +1,2 @@
+cfg_key,snr_key,mode,snr_db,sigma2,det_threshold,p_fa_emp,target_fa,num_trials
+name=F0|LRA=839|Nfft=24576|Nrep=1|ZCZ=8,-24.0,hopping,-24.0,210744.1615396424,2670199677117.4673,0.001,0.001,2000

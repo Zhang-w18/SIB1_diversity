@@ -1,0 +1,3 @@
+Config,SNR(dB),BLER
+Cyclic PRG precoding,-20,0.8771929824561403
+Traditional PRG precoding,-20,0.819672131147541

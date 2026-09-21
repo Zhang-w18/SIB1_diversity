@@ -1,0 +1,4 @@
+Config,SNR(dB),BLER
+48RB ¡Á 12sym 1 comb,-4,1.0
+48RB ¡Á 12sym 1 comb,-3,1.0
+48RB ¡Á 12sym 1 comb,-2.5,1.0

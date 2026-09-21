@@ -1,0 +1,37 @@
+[tool.black]
+line-length = 120
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+py3gpp = ["codes/*.csv"]
+
+[project]
+version = "0.6.0"
+authors = [
+    {name = "Benjamin Menküc", email = "benjamin@menkuec.de"},
+]
+description = "Functions for 5G NR signal processing"
+name = "py3gpp"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.21.0",
+    "scipy>=1.9.3",
+    "importlib_resources"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",    
+]
+
+[project.urls]
+"Homepage" = "https://github.com/catkira/py3gpp"

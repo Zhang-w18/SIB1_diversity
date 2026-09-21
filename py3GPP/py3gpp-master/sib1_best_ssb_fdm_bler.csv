@@ -1,0 +1,31 @@
+Config,SNR(dB),BLER
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-25.0,0.7142857142857143
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-24.0,0.42735042735042733
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-23.0,0.176056338028169
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-22.0,0.04625346901017576
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-21.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-20.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-19.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-18.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-17.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-16.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-15.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-14.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-13.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-12.0,0.0
+"Baseline: Coarse SSB (96RB CE, 4-Ant)",-11.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-25.0,0.6578947368421053
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-24.0,0.28735632183908044
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-23.0,0.11312217194570136
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-22.0,0.03403675970047652
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-21.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-20.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-19.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-18.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-17.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-16.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-15.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-14.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-13.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-12.0,0.0
+"Proposed: FDM Fine SSBs (48RB CE, 8-Ant)",-11.0,0.0

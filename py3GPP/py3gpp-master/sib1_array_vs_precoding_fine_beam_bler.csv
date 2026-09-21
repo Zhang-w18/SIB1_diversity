@@ -1,0 +1,76 @@
+Config,Family,Scheme,PRG_Size_RB,Precoding_Mode,CE_Mode,Precoding_Basis,Channel_Model,CDL_Type,SNR(dB),BLER
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-25.0,0.8771929824561403
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-24.0,0.7936507936507936
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-23.0,0.6756756756756757
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-22.0,0.5813953488372093
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-21.0,0.3067484662576687
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-20.0,0.175
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-19.0,0.105
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-18.0,0.045
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-17.0,0.01
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-16.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-15.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-14.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-13.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-12.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,CDL,CDLC,-11.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-25.0,0.8928571428571429
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-24.0,0.6756756756756757
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-23.0,0.6097560975609756
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-22.0,0.5617977528089888
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-21.0,0.2631578947368421
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-20.0,0.16
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-19.0,0.075
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-18.0,0.035
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-17.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-16.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-15.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-14.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-13.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-12.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,CDL,CDLC,-11.0,0.0
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-25.0,0.6493506493506493
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-24.0,0.4132231404958678
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-23.0,0.33112582781456956
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-22.0,0.3246753246753247
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-21.0,0.1
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-20.0,0.065
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-19.0,0.08
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-18.0,0.015
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-17.0,0.0
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-16.0,0.0
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-15.0,0.0
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-14.0,0.0
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-13.0,0.0
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-12.0,0.0
+"Array-based: refined 8-ant fine beam, full 48RB",array_based,array_refined_fine,48,traditional,fullband,polarization,CDL,CDLC,-11.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-25.0,0.6756756756756757
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-24.0,0.38461538461538464
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-23.0,0.245
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-22.0,0.26595744680851063
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-21.0,0.07
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-20.0,0.02
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-19.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-18.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-17.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-16.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-15.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-14.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-13.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-12.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,CDL,CDLC,-11.0,0.0
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-25.0,0.8620689655172413
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-24.0,0.7692307692307693
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-23.0,0.5555555555555556
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-22.0,0.46296296296296297
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-21.0,0.2631578947368421
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-20.0,0.1
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-19.0,0.06
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-18.0,0.02
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-17.0,0.0
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-16.0,0.0
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-15.0,0.0
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-14.0,0.0
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-13.0,0.0
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-12.0,0.0
+"Precoding-based: cyclic adjacent-beam basis, PRG=12RB",precoding_based,precoding_cyclic,24,cyclic,fullband,spatial_adjacent,CDL,CDLC,-11.0,0.0

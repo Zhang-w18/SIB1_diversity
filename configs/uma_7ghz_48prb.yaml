@@ -1,0 +1,95 @@
+schema_version: 1
+
+run:
+  seed: 20260913
+  link_mode: normalized_link
+  output_root: outputs
+  schemes: [baseline, pol_cycling, beam_cycling, beam_cdd]
+
+scenario:
+  model: UMa
+  carrier_frequency_hz: 7.0e9
+  bs_height_m: 25.0
+  ue_height_m: 1.5
+  isd_m: 500.0
+  ue_distance_min_m: 35.0
+  ue_distance_max_m: 115.0
+  sector_azimuth_min_deg: -60.0
+  sector_azimuth_max_deg: 60.0
+  ue_per_drop: 1
+
+panel:
+  azimuth_deg: 0.0
+  mechanical_downtilt_deg: 12.0
+  electrical_downtilt_deg: 0.0
+
+bs_array:
+  vertical_aes: 24
+  horizontal_aes: 16
+  polarizations: 2
+  vertical_txrus_per_pol: 4
+  horizontal_txrus_per_pol: 16
+  horizontal_spacing_lambda: 0.5
+  vertical_spacing_lambda: 0.8
+  txru_subarray_vertical_aes: 6
+  txru_subarray_horizontal_aes: 1
+  txru_mapping: contiguous_equal_phase_column_normalized
+
+ue_array:
+  vertical_elements: 1
+  horizontal_elements: 2
+  polarizations: 2
+
+nr:
+  subcarrier_spacing_hz: 30000
+  cyclic_prefix: normal
+  bwp_prbs: 106
+  pdsch_prbs: 48
+  allocation: centered
+  slot_symbols: 14
+  pdsch_start_symbol: 2
+  pdsch_length_symbols: 12
+  dmrs_symbols: [2, 11]
+  dmrs_configuration_type: 1
+  dmrs_cdm_groups_without_data: 1
+  dmrs_res_per_prb_per_symbol: 6
+  logical_dmrs_port: 1000
+  prg_size_prbs: 2
+  rank: 1
+  modulation: QPSK
+  mcs_index: 0
+  target_code_rate_x1024: 120
+  rv: 0
+  x_overhead: 0
+  tbs_bits: 1480
+  tb_crc_bits: 16
+  si_rnti: 65535
+
+codebooks:
+  ssb_horizontal_beams: 8
+  ssb_vertical_beams: 1
+  secondary_horizontal_beams: 16
+  secondary_vertical_beams: 1
+  secondary_per_selected_ssb: 2
+  synthesis: weighted_lls_flat_top
+
+schemes:
+  pol_cycling_phase_deg: [0.0, 90.0]
+  beam_cycling_hold_prgs: 1
+  beam_cdd_beams: 2
+  beam_cdd_delay_samples: [0, 1]
+  normalization: per_active_subcarrier
+
+receiver:
+  rx_branches: 4
+  combining: MRC
+  primary_prior: ssb_pdp
+  estimators: [perfect_csi, ls, lmmse]
+  covariance_storage: runtime_window_only
+
+monte_carlo:
+  snr_db: [-8, -6, -4, -2, 0, 2, 4, 6]
+  target_block_errors: 100
+  max_drops_per_snr: 10000
+  confidence_level: 0.95
+

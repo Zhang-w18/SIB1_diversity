@@ -1,0 +1,46 @@
+Config,Family,Scheme,PRG_Size_RB,Precoding_Mode,CE_Mode,Precoding_Basis,DMRS_Pattern,Channel_Model,CDL_Type,SNR(dB),BLER
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-25.0,1.0
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-24.0,1.0
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-23.0,0.9803921568627451
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-22.0,0.9090909090909091
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-21.0,0.5376344086021505
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-20.0,0.14333333333333334
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-19.0,0.03
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-18.0,0.0
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-17.0,0.0
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-16.0,0.0
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-15.0,0.0
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-14.0,0.0
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-13.0,0.0
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-12.0,0.0
+"Comb-DMRS RE-level: array beam1/beam2, pattern 01020102",array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,CDL,CDLD,-11.0,0.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-25.0,1.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-24.0,1.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-23.0,0.9803921568627451
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-22.0,0.9090909090909091
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-21.0,0.5376344086021505
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-20.0,0.14333333333333334
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-19.0,0.03
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-18.0,0.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-17.0,0.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-16.0,0.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-15.0,0.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-14.0,0.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-13.0,0.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-12.0,0.0
+"Comb-DMRS RE-level: precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,CDL,CDLD,-11.0,0.0
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-25.0,1.0
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-24.0,1.0
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-23.0,0.9615384615384616
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-22.0,0.8771929824561403
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-21.0,0.5263157894736842
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-20.0,0.17667844522968199
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-19.0,0.04666666666666667
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-18.0,0.0033333333333333335
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-17.0,0.0
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-16.0,0.0
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-15.0,0.0
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-14.0,0.0
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-13.0,0.0
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-12.0,0.0
+"Legacy: array refined fine beam, legacy DMRS 010101",array_based,array_refined_fine,48,traditional,fullband,polarization,legacy,CDL,CDLD,-11.0,0.0

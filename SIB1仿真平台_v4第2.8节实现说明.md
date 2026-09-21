@@ -1,0 +1,155 @@
+# SIB1 仿真平台对 v4 第 2.8 节的实现说明
+
+## 1. 结论
+
+更新前，平台不能严格实现第 2.8 节的两个模式。虽然信道生成代码已经在 Sionna 内部分别取得施加大尺度标量前后的 CIR，但平台只保留了完整信道，链路仿真随后又按 selected SSB 的瞬时宽带功率逐 drop 归一化。这种归一化同时消除了部分小尺度能量起伏，不等价于第 2.8 节定义的“大尺度幅度归一化”。
+
+更新后，平台支持以下两个模式：
+
+- `fixed_radius_ls_normalized`：保留 LOS/NLOS 状态、Rician K 因子、时延与角度扩展、cluster/ray 功率、随机相位、频率选择性、阵列响应和 Rx 分支差异，只把当前 drop 的路径损耗与阴影衰落标量功率增益 $G_d$ 替换为预先冻结的参考增益 $G_0$。
+- `fixed_radius_full_channel`：保留 Sionna 生成的完整信道，包括当前 drop 的路径损耗和阴影衰落。
+
+两个模式都不使用 selected-SSB 瞬时功率或某个传输方案的有效信道功率做归一化。
+
+## 2. Sionna 1.0.2 是否支持
+
+支持。本平台固定使用系统安装的 Sionna 1.0.2。其 `UMa` 系统级信道的生成顺序是：
+
+1. LSP sampler 生成 LOS/NLOS 相关的 large-scale parameters，包括阴影衰落和 K 因子；
+2. ray sampler 生成 cluster/ray 时延、功率和角度；
+3. CIR sampler 生成尚未施加路径损耗和阴影衰落标量的路径系数；
+4. `SystemLevelChannel._step_12()` 对同一 BS--UE 链路的全部路径、天线和采样点统一乘以
+
+   $$
+   a_d=10^{-PL_d/20}\sqrt{SF_d},
+   $$
+
+   因而 $G_d=a_d^2$。
+
+这正好满足第 2.8 节所需的分解
+
+$$
+\mathbf H_d[k]=\sqrt{G_d}\,\mathbf H_{{\rm SS},d}[k].
+$$
+
+平台在一次信道生成过程中保留 `_step_12()` 前后的 CIR，并利用两者的总功率比提取公共幅度标量 $a_d$。这里的比值不是 selected-SSB 功率，也不是对小尺度 realization 做单位能量归一化；由于 Sionna 的 `_step_12()` 本身只施加一个公共标量，该比值就是 Sionna 实际施加的路径损耗与阴影衰落幅度。
+
+当前实现需要调用 Sionna 1.0.2 的私有分阶段 API（`_lsp_sampler`、`_ray_sampler`、`_cir_sampler` 和 `_step_12`），原因是公开的一次性调用不会返回本实现构造条件 LMMSE 协方差所需的 K 因子及缩放前 CIR。因此平台依赖已由环境锁定的 Sionna 版本；升级 Sionna 前必须重新运行 UMa、协方差和端到端测试。
+
+## 3. 信道生成与 drop 数据
+
+实现位置为 `src/sib1div/channel/uma.py`。
+
+每个 `UMaDrop` 保存：
+
+- `path_coefficients`：已施加 Sionna 大尺度幅度的 TXRU 域路径系数；
+- `path_spatial_covariances`：与上述路径系数处在同一功率尺度的逐路径空间协方差；
+- `large_scale_amplitude_gain`：$a_d=\sqrt{G_d}$；
+- `large_scale_power_gain`：$G_d$；
+- `pathloss_db`：Sionna 的 basic pathloss 诊断值；
+- UE 位置、固定半径、方位、LOS/NLOS、路径时延和 cluster 功率。
+
+UE 位置总是在调用 Sionna 生成信道前确定。对于第 2.8 节模式，配置验证强制
+
+```yaml
+scenario:
+  ue_distance_min_m: 100.0
+  ue_distance_max_m: 100.0
+```
+
+即水平距离固定，方位仍按配置的扇区范围和主种子抽取。
+
+## 4. 两个链路模式的缩放
+
+实现位置为 `src/sib1div/sim/engine.py` 的 `link_mode_scaling()` 和 `simulate_one_drop()`。
+
+### 4.1 模式 A：`fixed_radius_ls_normalized`
+
+平台从 Sionna 完整信道开始，对瞬时频响施加功率缩放
+
+$$
+s_A=\frac{G_0}{G_d},\qquad
+\widehat{\mathbf H}_d^{(A)}[k]
+=\mathbf H_d[k]\sqrt{s_A}
+=\sqrt{G_0}\mathbf H_{{\rm SS},d}[k].
+$$
+
+同一个 $s_A$ 也乘到逐路径空间协方差上。这样瞬时信道和 LMMSE 先验保持相同功率尺度。小尺度宽带总能量不被强制为 1。
+
+### 4.2 模式 B：`fixed_radius_full_channel`
+
+平台使用
+
+$$
+s_B=1,\qquad
+\mathbf H_d^{(B)}[k]=\mathbf H_d[k],
+$$
+
+逐路径空间协方差也保持 Sionna 原始的完整信道功率尺度。
+
+### 4.3 SSB 选择
+
+平台先在完整信道上计算所有 SSB 的宽带平均接收功率并选择最大者。模式 A 和模式 B 后续施加的都是同一 drop 内对所有波束相同的正标量，因此不会改变 selected SSB。实现还会在缩放后重新检查 selected SSB；若索引改变则立即报错。
+
+selected-SSB 功率只作为诊断量保存为 `selected_ssb_power_before_scaling` 和 `selected_ssb_power_after_scaling`，不参与两个新模式的归一化。
+
+## 5. 公共 SNR 与噪声
+
+两个模式使用完全相同的横轴定义。配置必须预先给出唯一 $G_0$，并同时记录线性值、dB 值和物理定义：
+
+```yaml
+run:
+  link_mode: fixed_radius_ls_normalized  # 或 fixed_radius_full_channel
+
+link_normalization:
+  reference_definition: 100 m UMa LOS、无阴影条件下的路径功率增益
+  reference_large_scale_power_gain_linear: 1.0e-10  # 示例，正式值由实验 plan 冻结
+  reference_large_scale_power_gain_db: -100.0
+  per_scheme_renormalization: false
+```
+
+配置加载时会检查 $G_0>0$、线性值与 dB 值一致、参考定义非空、禁止按方案重新归一化，并检查固定半径。
+
+当前每个发射 RE 的总符号能量为 $E_s=1$，因此给定标称参考 SNR $gamma_{0,{\rm dB}}$ 时，每个复接收分支的噪声方差为
+
+$$
+N_0=G_0 10^{-\gamma_{0,{\rm dB}}/10}.
+$$
+
+模式 A 与模式 B 都使用这个 $N_0$，不会按 drop 的 $G_d$、LOS/NLOS、selected SSB 或方案调整噪声。
+
+## 6. 两个模式和四种方案如何共用随机样本
+
+`UMaChannel.generate(drop_index)` 的 Sionna 种子只由主种子和绝对 `drop_index` 派生，不依赖 `link_mode`。TB 和单位方差噪声也只由主种子、SNR stream index 与绝对 drop index 派生。因此，用两份除 `run.link_mode` 外保持相同的冻结配置运行相同绝对 drop 区间时，两个模式会复用相同的：
+
+- UE 方位和位置；
+- LOS/NLOS、LSP、cluster/ray 与随机相位；
+- 传输块；
+- 单位方差噪声 realization。
+
+在每个 drop 内，Baseline、Pol-cycling、Beam cycling 和 Beam CDD 都从同一个 `UMaDrop`、TB 和单位方差噪声构造结果。只有预编码器不同。
+
+## 7. 运行记录和诊断
+
+普通链路运行的 `link_results.csv` 会为每个结果记录：
+
+- `large_scale_power_gain`，即 $G_d$；
+- `channel_power_scale`，模式 A 为 $G_0/G_d$、模式 B 为 1；
+- `noise_variance`；
+- 缩放前后的 selected-SSB 功率；
+- selected SSB、LOS/NLOS、半径、方位和解码结果。
+
+展开配置和运行元数据保留 `run.link_mode`、完整 `link_normalization`、主种子和环境版本。历史 `normalized_link` 行为仍保留，以便复现 Plan 001/002，但它按 selected-SSB 瞬时功率归一化，不得用于声称实现 v4 第 2.8 节。
+
+## 8. 验证范围
+
+相关自动测试覆盖：
+
+- Sionna UMa drop 能生成有限的 TXRU 域路径系数和半正定路径协方差；
+- 提取的 $a_d$ 和 $G_d$ 为正且满足 $G_d=a_d^2$；
+- 两个新模式的配置约束、固定半径和 $G_0$ 线性/dB 一致性；
+- 模式 A 的信道功率缩放为 $G_0/G_d$；
+- 模式 B 的信道功率缩放为 1；
+- 两个模式的噪声方差都只由同一个 $G_0$ 和标称参考 SNR 决定，与 selected-SSB 瞬时功率无关。
+
+本次是平台功能更新和 smoke/单元验证，没有启动用于生成曲线或形成物理结论的正式方案对比，因此不创建新的 `research/plan-XXX.md` 与 `research/result-XXX.md`。后续正式比较两个模式时，必须按项目规则新建一对同编号 plan/result，并在 plan 中冻结半径、$G_0$ 定义、两个配置文件及共同的绝对 drop 区间。

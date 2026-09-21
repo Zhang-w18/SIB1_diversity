@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sib1div"
+version = "0.1.0"
+description = "Reproducible SIB1 transmission-diversity link simulation"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "matplotlib>=3.8,<4",
+  "numpy>=1.26,<2",
+  "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+simulation = [
+  "tensorflow==2.15.1",
+  "sionna==1.0.2",
+]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+sib1div = "sib1div.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "--basetemp=.pytest_tmp_sib1div"

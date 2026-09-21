@@ -1,0 +1,31 @@
+Config,SNR(dB),Sector_Avg_BLER
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-25.0,0.9950980392156863
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-24.0,0.9772727272727273
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-23.0,0.9344919786096256
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-22.0,0.808239628994346
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-21.0,0.633869266874193
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-20.0,0.42781993117425754
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-19.0,0.17616192728682512
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-18.0,0.058256721707165074
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-17.0,0.0
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-16.0,0.0
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-15.0,0.0
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-14.0,0.0
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-13.0,0.0
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-12.0,0.0
+"Baseline: 4 Coarse SSBs (96RB, 4-Ant)",-11.0,0.0
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-25.0,1.0
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-24.0,0.9903846153846154
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-23.0,0.9516129032258065
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-22.0,0.7977843915343916
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-21.0,0.6423350199954765
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-20.0,0.4372670759586511
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-19.0,0.17481303978540755
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-18.0,0.05383760105691948
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-17.0,0.0
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-16.0,0.0
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-15.0,0.0
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-14.0,0.0
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-13.0,0.0
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-12.0,0.0
+"Proposed: FDM 8 Fine SSBs (48RB Bundle, 8-Ant)",-11.0,0.0

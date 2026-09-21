@@ -1,0 +1,64 @@
+Config,Family,Scheme,PRG_Size_RB,Precoding_Mode,CE_Mode,Precoding_Basis,Channel_Model,CDL_Type,SNR(dB),BLER
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-10.0,0.704225352112676
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-9.0,0.5263157894736842
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-8.0,0.2403846153846154
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-7.0,0.07278020378457059
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-6.0,0.010333333333333333
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-5.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-4.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-3.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-2.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,-1.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,0.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,1.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,2.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,3.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,4.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,5.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,6.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,7.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,8.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,9.0,0.0
+"Array-based: 4-ant coarse beam, full 48RB",array_based,array_coarse_baseline,48,traditional,fullband,polarization,TDL,CDLD,10.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-10.0,0.9615384615384616
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-9.0,0.6493506493506493
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-8.0,0.2074688796680498
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-7.0,0.03977724741447892
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-6.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-5.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-4.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-3.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-2.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,-1.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,0.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,1.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,2.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,3.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,4.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,5.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,6.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,7.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,8.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,9.0,0.0
+"Array-based: FDM fine beams, 24RB+24RB",array_based,array_fdm_fine,24,traditional,fullband,polarization,TDL,CDLD,10.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-10.0,0.8771929824561403
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-9.0,0.6578947368421053
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-8.0,0.28735632183908044
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-7.0,0.04807692307692308
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-6.0,0.006333333333333333
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-5.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-4.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-3.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-2.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,-1.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,0.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,1.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,2.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,3.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,4.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,5.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,6.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,7.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,8.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,9.0,0.0
+"Precoding-based: cyclic dual-pol, PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,TDL,CDLD,10.0,0.0

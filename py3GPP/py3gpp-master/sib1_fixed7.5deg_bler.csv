@@ -1,0 +1,73 @@
+Config,Family,Scheme,PRG_Size_RB,Precoding_Mode,CE_Mode,Precoding_Basis,DMRS_Pattern,N_Coarse_SSB,N_Fine_Beams,Channel_Model,CDL_Type,Fixed_AOD_Deg,SNR(dB),BLER
+"Baseline: coarse 4H beam, 24RB CE, legacy DMRS",array_based,array_coarse_baseline,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-17,0.78125
+"Baseline: coarse 4H beam, 24RB CE, legacy DMRS",array_based,array_coarse_baseline,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-15,0.5449591280653951
+"Baseline: coarse 4H beam, 24RB CE, legacy DMRS",array_based,array_coarse_baseline,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-13,0.351493848857645
+"Baseline: coarse 4H beam, 24RB CE, legacy DMRS",array_based,array_coarse_baseline,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-11,0.18
+"Baseline: coarse 4H beam, 24RB CE, legacy DMRS",array_based,array_coarse_baseline,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-9,0.076
+"Baseline: coarse 4H beam, 24RB CE, legacy DMRS",array_based,array_coarse_baseline,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-7,0.021
+"Baseline: coarse 4H beam, 24RB CE, legacy DMRS",array_based,array_coarse_baseline,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-5,0.0
+"Baseline: coarse 4H beam, 24RB CE, legacy DMRS",array_based,array_coarse_baseline,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-3,0.0
+"Baseline: coarse 4H beam, 24RB CE, legacy DMRS",array_based,array_coarse_baseline,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-1,0.0
+"Baseline: coarse 4H beam, 8RB CE, legacy DMRS",array_based,array_coarse_baseline,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-17,0.847457627118644
+"Baseline: coarse 4H beam, 8RB CE, legacy DMRS",array_based,array_coarse_baseline,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-15,0.6097560975609756
+"Baseline: coarse 4H beam, 8RB CE, legacy DMRS",array_based,array_coarse_baseline,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-13,0.4132231404958678
+"Baseline: coarse 4H beam, 8RB CE, legacy DMRS",array_based,array_coarse_baseline,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-11,0.24154589371980675
+"Baseline: coarse 4H beam, 8RB CE, legacy DMRS",array_based,array_coarse_baseline,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-9,0.096
+"Baseline: coarse 4H beam, 8RB CE, legacy DMRS",array_based,array_coarse_baseline,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-7,0.032
+"Baseline: coarse 4H beam, 8RB CE, legacy DMRS",array_based,array_coarse_baseline,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-5,0.007
+"Baseline: coarse 4H beam, 8RB CE, legacy DMRS",array_based,array_coarse_baseline,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-3,0.0
+"Baseline: coarse 4H beam, 8RB CE, legacy DMRS",array_based,array_coarse_baseline,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-1,0.0
+Comb-DMRS-array: RE-level qh_a/qh_b fine-beam states,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-17,0.91324200913242
+Comb-DMRS-array: RE-level qh_a/qh_b fine-beam states,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-15,0.746268656716418
+Comb-DMRS-array: RE-level qh_a/qh_b fine-beam states,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-13,0.5194805194805194
+Comb-DMRS-array: RE-level qh_a/qh_b fine-beam states,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-11,0.2936857562408223
+Comb-DMRS-array: RE-level qh_a/qh_b fine-beam states,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-9,0.118
+Comb-DMRS-array: RE-level qh_a/qh_b fine-beam states,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-7,0.037
+Comb-DMRS-array: RE-level qh_a/qh_b fine-beam states,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-5,0.005
+Comb-DMRS-array: RE-level qh_a/qh_b fine-beam states,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-3,0.0
+Comb-DMRS-array: RE-level qh_a/qh_b fine-beam states,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-1,0.0
+"Comb-DMRS-precoding: RE-level dual-pol [1,1]/[1,j] states",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-17,0.7936507936507936
+"Comb-DMRS-precoding: RE-level dual-pol [1,1]/[1,j] states",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-15,0.5319148936170213
+"Comb-DMRS-precoding: RE-level dual-pol [1,1]/[1,j] states",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-13,0.2962962962962963
+"Comb-DMRS-precoding: RE-level dual-pol [1,1]/[1,j] states",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-11,0.123
+"Comb-DMRS-precoding: RE-level dual-pol [1,1]/[1,j] states",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-9,0.031
+"Comb-DMRS-precoding: RE-level dual-pol [1,1]/[1,j] states",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-7,0.006
+"Comb-DMRS-precoding: RE-level dual-pol [1,1]/[1,j] states",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-5,0.0
+"Comb-DMRS-precoding: RE-level dual-pol [1,1]/[1,j] states",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-3,0.0
+"Comb-DMRS-precoding: RE-level dual-pol [1,1]/[1,j] states",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,7.5,-1,0.0
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=24RB, legacy DMRS",array_based,array_fdm_fine,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-17,0.7905138339920948
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=24RB, legacy DMRS",array_based,array_fdm_fine,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-15,0.5194805194805194
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=24RB, legacy DMRS",array_based,array_fdm_fine,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-13,0.3189792663476874
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=24RB, legacy DMRS",array_based,array_fdm_fine,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-11,0.162
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=24RB, legacy DMRS",array_based,array_fdm_fine,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-9,0.063
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=24RB, legacy DMRS",array_based,array_fdm_fine,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-7,0.015
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=24RB, legacy DMRS",array_based,array_fdm_fine,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-5,0.0
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=24RB, legacy DMRS",array_based,array_fdm_fine,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-3,0.0
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=24RB, legacy DMRS",array_based,array_fdm_fine,24,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-1,0.0
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=8RB, legacy DMRS",array_based,array_fdm_fine,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-17,0.8097165991902834
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=8RB, legacy DMRS",array_based,array_fdm_fine,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-15,0.5494505494505495
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=8RB, legacy DMRS",array_based,array_fdm_fine,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-13,0.3616636528028933
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=8RB, legacy DMRS",array_based,array_fdm_fine,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-11,0.193
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=8RB, legacy DMRS",array_based,array_fdm_fine,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-9,0.076
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=8RB, legacy DMRS",array_based,array_fdm_fine,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-7,0.02
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=8RB, legacy DMRS",array_based,array_fdm_fine,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-5,0.0
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=8RB, legacy DMRS",array_based,array_fdm_fine,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-3,0.0
+"PRG-array: 8H fine pair qh_a/qh_b, PRG=8RB, legacy DMRS",array_based,array_fdm_fine,8,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-1,0.0
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-17,0.6825938566552902
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-15,0.3898635477582846
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-13,0.194
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-11,0.066
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-9,0.014
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-7,0.0
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-5,0.0
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-3,0.0
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=24RB",precoding_based,precoding_cyclic,24,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-1,0.0
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=8RB",precoding_based,precoding_cyclic,8,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-17,0.7662835249042146
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=8RB",precoding_based,precoding_cyclic,8,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-15,0.4914004914004914
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=8RB",precoding_based,precoding_cyclic,8,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-13,0.2457002457002457
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=8RB",precoding_based,precoding_cyclic,8,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-11,0.103
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=8RB",precoding_based,precoding_cyclic,8,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-9,0.023
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=8RB",precoding_based,precoding_cyclic,8,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-7,0.0
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=8RB",precoding_based,precoding_cyclic,8,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-5,0.0
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=8RB",precoding_based,precoding_cyclic,8,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-3,0.0
+"PRG-precoding: centered spatial beam, dual-pol [1,1]/[1,j], PRG=8RB",precoding_based,precoding_cyclic,8,cyclic,fullband,polarization,legacy,8,16,CDL,CDLC,7.5,-1,0.0

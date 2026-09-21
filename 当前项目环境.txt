@@ -1,0 +1,23 @@
+当前项目使用的是系统级 Python 环境，不是项目内置的虚拟环境：
+- Python 3.11.9
+- TensorFlow 2.15.1
+- Sionna 1.0.2
+- NumPy 1.26.4
+- PyYAML 6.0
+- 当前机器未使用项目旧 py3GPP/ 中的 Sionna
+- 当前 Python 路径是 C:\Users\z00873277\AppData\Local\Programs\Python\Python311\python.exe
+这些要求已经写在 [pyproject.toml](D:/07 2026/Simulation/SIB1_diversity/pyproject.toml) 中。其中 Python 要求为 >=3.11,<3.12，仿真依赖固定为 TensorFlow 2.15.1 和 Sionna 1.0.2。
+换机器时不需要修改项目配置来“指定环境”。你另一台机器已有 Python 3.11.9 和 Sionna 1.0.2，基本匹配；还应确认 TensorFlow 是 2.15.1。复制整个项目文件夹后，在项目根目录执行：
+py -3.11 -m pip install -e ".[simulation,test]"
+py -3.11 -m pytest -q
+py -3.11 -m sib1div.cli validate-config configs/uma_7ghz_48prb.yaml --output outputs/scaffold_validation_new_machine
+pip install -e 需要在新机器重新执行，因为原机器的包安装记录不会随文件夹复制。它会把新项目路径注册到新机器的 Python 环境。
+项目的正式运行脚本，例如 [run_plan003.ps1](D:/07 2026/Simulation/SIB1_diversity/run_plan003.ps1)，会根据脚本自身位置自动计算项目根目录，并动态设置 PYTHONPATH=项目目录\src。因此即使复制到不同盘符或目录，通常也无需改路径。
+需要注意：
+- 要复制完整的 outputs/plan-001/codebook_7ghz_8h1v_mainlobe/，正式仿真会读取其中冻结的码本。
+- 不要把旧 py3GPP/ 目录加入 PYTHONPATH。
+- 如果新机器用的是虚拟环境，应先激活它，再执行上述安装和运行命令。
+- CPU/GPU不同可能造成运行速度和极小的浮点差异，但种子、配置和算法仍可复现。
+- 最好确认依赖：
+py -3.11 -c "import importlib.metadata as m; print('TF',m.version('tensorflow')); print('Sionna',m.version('sionna')); print('NumPy',m.version('numpy')); print('PyYAML',m.version('PyYAML'))"
+如果 TensorFlow 不是 2.15.1，运行第一条安装命令会按项目声明安装或调整到正确版本。

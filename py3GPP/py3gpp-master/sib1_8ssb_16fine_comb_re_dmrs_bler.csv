@@ -1,0 +1,61 @@
+Config,Family,Scheme,PRG_Size_RB,Precoding_Mode,CE_Mode,Precoding_Basis,DMRS_Pattern,N_Coarse_SSB,N_Fine_Beams,Channel_Model,CDL_Type,SNR(dB),BLER
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-25.0,0.9803921568627451
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-24.0,1.0
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-23.0,0.9433962264150944
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-22.0,0.847457627118644
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-21.0,0.9090909090909091
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-20.0,0.746268656716418
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-19.0,0.5263157894736842
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-18.0,0.5319148936170213
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-17.0,0.4
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-16.0,0.26
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-15.0,0.18
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-14.0,0.12
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-13.0,0.09
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-12.0,0.06
+8-SSB reference: 4-ant coarse beam centered at SSB qh_c,array_based,array_coarse_baseline,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-11.0,0.02
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-25.0,1.0
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-24.0,1.0
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-23.0,0.9803921568627451
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-22.0,1.0
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-21.0,0.9433962264150944
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-20.0,0.847457627118644
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-19.0,0.625
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-18.0,0.6756756756756757
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-17.0,0.5319148936170213
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-16.0,0.43
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-15.0,0.33
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-14.0,0.23
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-13.0,0.14
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-12.0,0.13
+Ideal reference: 8-ant fine beam exactly centered at SSB qh_c,array_based,array_centered_fine,48,traditional,fullband,polarization,legacy,8,16,CDL,CDLC,-11.0,0.05
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-25.0,1.0
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-24.0,1.0
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-23.0,0.9615384615384616
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-22.0,0.9615384615384616
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-21.0,0.9433962264150944
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-20.0,0.78125
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-19.0,0.5747126436781609
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-18.0,0.6097560975609756
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-17.0,0.46
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-16.0,0.3
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-15.0,0.25
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-14.0,0.16
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-13.0,0.09
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-12.0,0.07
+Comb-DMRS aligned: 16-dir array fine pair around SSB qh_c,array_based,array_comb_re_dmrs,48,traditional,fullband,polarization,comb2_re,8,16,CDL,CDLC,-11.0,0.03
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-25.0,1.0
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-24.0,1.0
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-23.0,1.0
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-22.0,1.0
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-21.0,0.9615384615384616
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-20.0,0.9090909090909091
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-19.0,0.6410256410256411
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-18.0,0.704225352112676
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-17.0,0.5555555555555556
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-16.0,0.41
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-15.0,0.26
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-14.0,0.18
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-13.0,0.05
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-12.0,0.11
+"Comb-DMRS aligned: centered precoding states [1,1]/[1,j]",precoding_based,precoding_comb_re_dmrs,48,cyclic,fullband,polarization,comb2_re,8,16,CDL,CDLC,-11.0,0.02
