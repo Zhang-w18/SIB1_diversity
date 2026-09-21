@@ -1,0 +1,234 @@
+schema_version: 1
+experiment:
+  id: plan-003-smooth-scan-01
+  title: plan003_estimated_csi_smooth_lower_snr_extension
+  stage: formal
+  created_date: 2026-09-17
+  known_blocker: null
+run:
+  seed: 20260913
+  random_stream_namespace: plan003_smooth_scan_01_v1
+  link_mode: fixed_radius_ls_normalized
+  output_root: outputs/plan-003
+  schemes:
+  - baseline
+  - pol_cycling
+  - beam_cycling
+  - beam_cdd
+  common_random_samples:
+  - ue_drop
+  - transport_block
+  - channel
+  - noise
+scenario:
+  model: UMa
+  direction: downlink
+  carrier_frequency_hz: 7.0e9
+  bs_height_m: 25.0
+  ue_height_m: 1.5
+  isd_m: 500.0
+  ue_distance_min_m: 100.0
+  ue_distance_max_m: 100.0
+  ue_distance_sampling: fixed_radius
+  ue_geometry_constraint: before_channel_generation
+  post_channel_drop_rejection: forbidden
+  sector_azimuth_min_deg: -60.0
+  sector_azimuth_max_deg: 60.0
+  ue_per_drop: 1
+  los_state: 3gpp_uma_random
+  mobility_mps: 0.0
+  channel_time_model: constant_within_one_slot
+  pathloss_and_shadow_fading: replaced_by_frozen_reference_gain_g0
+panel:
+  azimuth_deg: 0.0
+  mechanical_downtilt_deg: 12.0
+  electrical_downtilt_deg: 0.0
+bs_array:
+  vertical_aes: 24
+  horizontal_aes: 16
+  polarizations: 2
+  vertical_txrus_per_pol: 4
+  horizontal_txrus_per_pol: 16
+  horizontal_spacing_lambda: 0.5
+  vertical_spacing_lambda: 0.8
+  txru_subarray_vertical_aes: 6
+  txru_subarray_horizontal_aes: 1
+  txru_mapping: contiguous_equal_phase_column_normalized
+ue_array:
+  vertical_elements: 1
+  horizontal_elements: 2
+  polarizations: 2
+nr:
+  subcarrier_spacing_hz: 30000
+  cyclic_prefix: normal
+  fft_size: 2048
+  sampling_rate_hz: 6.144e7
+  bwp_prbs: 106
+  pdsch_prbs: 48
+  allocation: centered
+  slot_symbols: 14
+  pdsch_start_symbol: 2
+  pdsch_length_symbols: 12
+  dmrs_symbols:
+  - 2
+  - 11
+  dmrs_configuration_type: 1
+  dmrs_cdm_groups_without_data: 1
+  dmrs_res_per_prb_per_symbol: 6
+  dmrs_frequency_comb: 2
+  logical_dmrs_port: 1000
+  prg_size_prbs: 2
+  rank: 1
+  modulation: QPSK
+  mcs_index: 0
+  target_code_rate_x1024: 120
+  rv: 0
+  x_overhead: 0
+  tbs_bits: 1480
+  tb_crc_bits: 16
+  si_rnti: 65535
+  n_id: 0
+  n_cell_id: 0
+codebooks:
+  ssb_horizontal_beams: 8
+  ssb_vertical_beams: 1
+  secondary_horizontal_beams: 16
+  secondary_vertical_beams: 1
+  secondary_per_selected_ssb: 2
+  synthesis: weighted_lls_flat_top
+  weights_file: outputs/plan-001/codebook_7ghz_8h1v_mainlobe/codebook_weights.npz
+  metadata_file: outputs/plan-001/codebook_7ghz_8h1v_mainlobe/codebook_metadata.json
+  selected_ssb_method: maximum_wideband_average_received_power
+  selected_ssb_error_model: none
+  review_status: frozen
+  freeze_date: 2026-09-13
+  weights_sha256: 3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259
+  accepted_edge_rolloff: true
+schemes:
+  baseline_pol_phase_deg: 0.0
+  pol_cycling_phase_deg:
+  - 0.0
+  - 90.0
+  pol_cycling_hold_prgs: 1
+  beam_cycling_hold_prgs: 1
+  beam_cycling_pattern: alternate_two_children_of_selected_ssb
+  beam_cdd_beams: 2
+  beam_cdd_design_name: S0_SIDON2
+  beam_cdd_delay_definition: active_band_dft_grid
+  beam_cdd_delay_grid_modulus: 576
+  beam_cdd_delay_grid_indices:
+  - 0
+  - 1
+  beam_cdd_delay_samples:
+  - 0.0
+  - 3.5555555555555554
+  beam_cdd_delay_seconds:
+  - 0.0
+  - 5.787037037037037e-08
+  beam_cdd_phase_denominator: 576
+  beam_cdd_subcarrier_index: local_active_subcarrier_0_to_575
+  beam_cdd_implementation: frequency_domain_linear_phase_fractional_cyclic_shift
+  beam_cdd_dmrs_fold_modulus: 288
+  beam_cdd_dmrs_fold_residues:
+  - 0
+  - 1
+  normalization: per_active_subcarrier
+  record_raw_precoder_power_spectrum: true
+receiver:
+  rx_branches: 4
+  combining: MRC
+  estimators:
+  - perfect_csi
+  - ls
+  - lmmse
+  primary_estimator: lmmse_ssb_pdp
+  primary_prior: ssb_pdp
+  ssb_pdp_estimation_error: none
+  baseline_lmmse_window_prbs: 2
+  pol_cycling_lmmse_window_prbs: 2
+  beam_cycling_lmmse_window_prbs: 2
+  beam_cdd_lmmse_window_prbs: 48
+  beam_cdd_prior: ssb_pdp_with_known_cdd_delays
+  beam_cdd_include_known_per_subcarrier_normalization: true
+  covariance_storage: runtime_window_only
+  diagnostic_priors:
+    beam_cycling: per_beam_pdp
+    beam_cdd:
+    - per_beam_pdp
+    - ideal_joint_covariance
+  estimated_csi_curves:
+  - id: B-SSB
+    scheme: baseline
+    covariance: ssb_pdp
+    window_prbs: 2
+    prg_size_prbs: 2
+  - id: P2-SSB
+    label: pol_cycling_prg2
+    scheme: pol_cycling
+    covariance: ssb_pdp
+    window_prbs: 2
+    prg_size_prbs: 2
+  - id: P6-SSB
+    label: pol_cycling_prg6
+    scheme: pol_cycling
+    covariance: ssb_pdp
+    window_prbs: 2
+    prg_size_prbs: 6
+  - id: BC-SSB
+    scheme: beam_cycling
+    covariance: ssb_pdp
+    window_prbs: 2
+    prg_size_prbs: 2
+  - id: CDD-SSB
+    scheme: beam_cdd
+    covariance: cdd_ssb_pdp
+    window_prbs: 48
+    prg_size_prbs: 2
+  perfect_csi_curves: []
+link_normalization:
+  reference_definition: 100 m horizontal-radius UMa LOS basic path gain, no shadow
+    fading; PL=28+22log10(d3D)+20log10(fc_GHz)
+  reference_large_scale_power_gain_linear: 1.21373630034847e-09
+  reference_large_scale_power_gain_db: -89.158756590132
+  large_scale_drop_gain_definition: sionna_step_12_pathloss_and_shadow_fading_scalar_power_gain
+  channel_scaling: G0_over_Gd
+  noise_variance: G0_times_10_power_minus_gamma0_db_over_10
+  per_scheme_renormalization: false
+  horizontal_axis: nominal_reference_Es_over_N0_gamma0_db
+monte_carlo:
+  snr_strategy: fixed_common_drops
+  snr_points_db:
+  - -18
+  - -17
+  - -16
+  - -15
+  - -14
+  - -13
+  - -12
+  - -11
+  - -10
+  - -9
+  - -8
+  fixed_drops_per_snr: 4000
+  target_block_errors_diagnostic: 100
+  snr_stream_grid_origin_db: -18.0
+  snr_stream_grid_step_db: 1.0
+  drop_index_start: 1000
+  progress_interval_drops: 10
+  confidence_level: 0.95
+  confidence_interval: wilson
+  stopping_rule: exactly_4000_common_drops_per_snr_no_early_stop
+  purpose: smooth_bler_near_5e-2_and_bracket_bler_1e-1_below_minus14_db
+preflight:
+  platform_acceptance_report: outputs/platform_acceptance/平台基础功能调试报告.md
+  frozen_codebook_sha256_required: true
+  formal_run_allowed: true
+  formal_run_blocked_by: []
+derived:
+  active_subcarriers: 576
+  dmrs_res: 576
+  data_res: 6336
+  coded_bits: 12672
+  txrus_per_polarization: 64
+  total_txru_ports: 128
+  total_bs_aes: 768

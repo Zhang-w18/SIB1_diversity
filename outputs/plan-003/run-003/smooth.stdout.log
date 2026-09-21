@@ -1,0 +1,6 @@
+Fixed curve run: SNR=[-18.0, -17.0, -16.0, -15.0, -14.0, -13.0, -12.0, -11.0, -10.0, -9.0, -8.0], 4000 common drops/SNR; 5 estimated-CSI curves + 0 Perfect-CSI diagnostics
+SNR -18 dB starting/resuming at 0 common drops
+  SNR -18 dB, common drops=10, errors=[B-SSB:0, P2-SSB:0, P6-SSB:0, BC-SSB:0, CDD-SSB:0]
+  SNR -18 dB, common drops=20, errors=[B-SSB:2, P2-SSB:3, P6-SSB:3, BC-SSB:3, CDD-SSB:2]
+  SNR -18 dB, common drops=30, errors=[B-SSB:4, P2-SSB:5, P6-SSB:5, BC-SSB:5, CDD-SSB:3]
+  SNR -18 dB, common drops=40, errors=[B-SSB:5, P2-SSB:6, P6-SSB:6, BC-SSB:6, CDD-SSB:4]

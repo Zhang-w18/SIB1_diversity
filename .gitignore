@@ -4,5 +4,3 @@ __pycache__/
 .pytest_tmp_sib1div/
 .coverage
 *.egg-info/
-outputs/*
-!outputs/.gitkeep

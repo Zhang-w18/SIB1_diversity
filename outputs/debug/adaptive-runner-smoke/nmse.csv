@@ -1,0 +1,8 @@
+snr_db,curve_id,scheme,covariance,blocks,mean_nmse
+20.0,B-SSB,baseline,ssb_pdp,1,0.0012112343785209308
+20.0,P-SSB,pol_cycling,ssb_pdp,1,0.0010341120227494059
+20.0,BC-SSB,beam_cycling,ssb_pdp,1,0.0011225020533844785
+20.0,BC-BEAM,beam_cycling,per_beam_pdp,1,0.0011024711971161672
+20.0,CDD-SSB,beam_cdd,cdd_ssb_pdp,1,0.0003296063118036958
+20.0,CDD-BEAM,beam_cdd,cdd_per_beam_pdp,1,0.00032950877216785933
+20.0,CDD-IDEAL,beam_cdd,ideal_covariance,1,0.0003140531409691511

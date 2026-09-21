@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-09-15T07:52:58.186866+00:00",
+  "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-002.yaml",
+  "config_sha256": "84dd14f598f748c7f3c3702e0a5370fc39ba0bdb93fe6c1175bb40c4c608bb3d",
+  "codebook_sha256": "3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259",
+  "master_seed": 20260913,
+  "estimated_csi_curves": [
+    {
+      "id": "B-SSB",
+      "scheme": "baseline",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "P-SSB",
+      "scheme": "pol_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "BC-SSB",
+      "scheme": "beam_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "BC-BEAM",
+      "scheme": "beam_cycling",
+      "covariance": "per_beam_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "CDD-SSB",
+      "scheme": "beam_cdd",
+      "covariance": "cdd_ssb_pdp",
+      "window_prbs": 48
+    },
+    {
+      "id": "CDD-BEAM",
+      "scheme": "beam_cdd",
+      "covariance": "cdd_per_beam_pdp",
+      "window_prbs": 48
+    },
+    {
+      "id": "CDD-IDEAL",
+      "scheme": "beam_cdd",
+      "covariance": "ideal_covariance",
+      "window_prbs": 48
+    }
+  ],
+  "perfect_csi_schemes": [
+    "baseline",
+    "pol_cycling",
+    "beam_cycling",
+    "beam_cdd"
+  ],
+  "actual_snr_db": [
+    -11.5,
+    -11.0,
+    -10.5,
+    -9.5,
+    -8.5
+  ],
+  "snr_stream_indices": {
+    "-11.5": 1,
+    "-11.0": 2,
+    "-10.5": 3,
+    "-9.5": 5,
+    "-8.5": 7
+  },
+  "fixed_drops_per_snr": 500,
+  "stopping": {
+    "snr_strategy": "fixed_common_drops",
+    "snr_points_db": [
+      -11.5,
+      -11,
+      -10.5,
+      -9.5,
+      -8.5
+    ],
+    "fixed_drops_per_snr": 500,
+    "snr_stream_grid_origin_db": -12.0,
+    "snr_stream_grid_step_db": 0.5,
+    "drop_index_start": 0,
+    "progress_interval_drops": 10,
+    "confidence_level": 0.95,
+    "confidence_interval": "wilson",
+    "purpose": "plan002_half_db_transition_region_extension"
+  },
+  "normalization": {
+    "reference": "selected_ssb_instantaneous_wideband_average_per_rx_power",
+    "common_across_schemes_within_drop": true,
+    "per_scheme_renormalization": false,
+    "selected_ssb_normalized_power_per_drop": 1.0,
+    "horizontal_axis": "EsN0_after_common_per_drop_selected_ssb_normalization"
+  },
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "1.26.4",
+    "PyYAML": "6.0",
+    "tensorflow": "2.15.1",
+    "sionna": "1.0.2"
+  }
+}

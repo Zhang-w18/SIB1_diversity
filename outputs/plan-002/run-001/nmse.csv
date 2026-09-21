@@ -1,0 +1,15 @@
+snr_db,curve_id,scheme,covariance,blocks,mean_nmse
+-12.0,B-SSB,baseline,ssb_pdp,500,0.4389654957101976
+-12.0,P-SSB,pol_cycling,ssb_pdp,500,0.4390760375794024
+-12.0,BC-SSB,beam_cycling,ssb_pdp,500,0.4288502926671339
+-12.0,BC-BEAM,beam_cycling,per_beam_pdp,500,0.3701597756083512
+-12.0,CDD-SSB,beam_cdd,cdd_ssb_pdp,500,0.10081296368448728
+-12.0,CDD-BEAM,beam_cdd,cdd_per_beam_pdp,500,0.08960551895525344
+-12.0,CDD-IDEAL,beam_cdd,ideal_covariance,500,0.08071663258445785
+-10.0,B-SSB,baseline,ssb_pdp,500,0.32894006223442135
+-10.0,P-SSB,pol_cycling,ssb_pdp,500,0.33037641424870806
+-10.0,BC-SSB,beam_cycling,ssb_pdp,500,0.3221321512493427
+-10.0,BC-BEAM,beam_cycling,per_beam_pdp,500,0.27754422729044637
+-10.0,CDD-SSB,beam_cdd,cdd_ssb_pdp,500,0.0702329928894822
+-10.0,CDD-BEAM,beam_cdd,cdd_per_beam_pdp,500,0.06358483385098859
+-10.0,CDD-IDEAL,beam_cdd,ideal_covariance,500,0.057382883825412664

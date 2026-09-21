@@ -1,0 +1,902 @@
+{
+  "schema_version": 1,
+  "config_sha256": "967c2e1c556acfccc6b9c055a537078cd2b4cd5f7ae703ffe2bf6e0861cca737",
+  "codebook_sha256": "3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259",
+  "points": {
+    "0": {
+      "blocks": 381,
+      "curves": {
+        "B-SSB": {
+          "errors": 0,
+          "nmse_sum": 19.948488366890924
+        },
+        "P-SSB": {
+          "errors": 0,
+          "nmse_sum": 20.472453587672103
+        },
+        "BC-SSB": {
+          "errors": 0,
+          "nmse_sum": 19.479631251241116
+        },
+        "BC-BEAM": {
+          "errors": 0,
+          "nmse_sum": 17.866649684354318
+        },
+        "CDD-SSB": {
+          "errors": 0,
+          "nmse_sum": 4.239042876675012
+        },
+        "CDD-BEAM": {
+          "errors": 0,
+          "nmse_sum": 4.021858187639946
+        },
+        "CDD-IDEAL": {
+          "errors": 0,
+          "nmse_sum": 3.720419793594645
+        },
+        "PERF-baseline": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-pol_cycling": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cycling": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cdd": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {
+        "B-SSB|P-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|BC-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|BC-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-BEAM|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        }
+      },
+      "complete": true,
+      "stop_reason": "all_estimated_curves_resolved"
+    },
+    "-2": {
+      "blocks": 381,
+      "curves": {
+        "B-SSB": {
+          "errors": 0,
+          "nmse_sum": 29.76307737145409
+        },
+        "P-SSB": {
+          "errors": 0,
+          "nmse_sum": 30.305542433879108
+        },
+        "BC-SSB": {
+          "errors": 0,
+          "nmse_sum": 29.081229481281877
+        },
+        "BC-BEAM": {
+          "errors": 0,
+          "nmse_sum": 26.125383144766005
+        },
+        "CDD-SSB": {
+          "errors": 0,
+          "nmse_sum": 6.215048935252666
+        },
+        "CDD-BEAM": {
+          "errors": 0,
+          "nmse_sum": 5.877529622021548
+        },
+        "CDD-IDEAL": {
+          "errors": 0,
+          "nmse_sum": 5.449134693542192
+        },
+        "PERF-baseline": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-pol_cycling": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cycling": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cdd": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {
+        "B-SSB|P-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|BC-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|BC-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-BEAM|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        }
+      },
+      "complete": true,
+      "stop_reason": "all_estimated_curves_resolved"
+    },
+    "-4": {
+      "blocks": 381,
+      "curves": {
+        "B-SSB": {
+          "errors": 0,
+          "nmse_sum": 44.061954940603194
+        },
+        "P-SSB": {
+          "errors": 0,
+          "nmse_sum": 44.770400125465905
+        },
+        "BC-SSB": {
+          "errors": 0,
+          "nmse_sum": 42.998553023474855
+        },
+        "BC-BEAM": {
+          "errors": 0,
+          "nmse_sum": 38.19021878043689
+        },
+        "CDD-SSB": {
+          "errors": 0,
+          "nmse_sum": 9.087863795553028
+        },
+        "CDD-BEAM": {
+          "errors": 0,
+          "nmse_sum": 8.559880538186135
+        },
+        "CDD-IDEAL": {
+          "errors": 0,
+          "nmse_sum": 7.90156435947575
+        },
+        "PERF-baseline": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-pol_cycling": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cycling": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cdd": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {
+        "B-SSB|P-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|BC-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|BC-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-BEAM|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        }
+      },
+      "complete": true,
+      "stop_reason": "all_estimated_curves_resolved"
+    },
+    "-6": {
+      "blocks": 381,
+      "curves": {
+        "B-SSB": {
+          "errors": 0,
+          "nmse_sum": 64.29876662932833
+        },
+        "P-SSB": {
+          "errors": 0,
+          "nmse_sum": 65.33521008185318
+        },
+        "BC-SSB": {
+          "errors": 0,
+          "nmse_sum": 62.781419673819954
+        },
+        "BC-BEAM": {
+          "errors": 0,
+          "nmse_sum": 54.730393432520614
+        },
+        "CDD-SSB": {
+          "errors": 0,
+          "nmse_sum": 13.08160880352297
+        },
+        "CDD-BEAM": {
+          "errors": 0,
+          "nmse_sum": 12.16253045832449
+        },
+        "CDD-IDEAL": {
+          "errors": 0,
+          "nmse_sum": 11.120546478287498
+        },
+        "PERF-baseline": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-pol_cycling": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cycling": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cdd": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {
+        "B-SSB|P-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|BC-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "B-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|BC-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "P-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|BC-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-SSB": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "BC-BEAM|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-SSB|CDD-BEAM": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-SSB|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        },
+        "CDD-BEAM|CDD-IDEAL": {
+          "n00": 381,
+          "n01": 0,
+          "n10": 0,
+          "n11": 0
+        }
+      },
+      "complete": true,
+      "stop_reason": "all_estimated_curves_resolved"
+    },
+    "-8": {
+      "blocks": 5230,
+      "curves": {
+        "B-SSB": {
+          "errors": 64,
+          "nmse_sum": 1264.9153742504204
+        },
+        "P-SSB": {
+          "errors": 390,
+          "nmse_sum": 1277.3806075114237
+        },
+        "BC-SSB": {
+          "errors": 329,
+          "nmse_sum": 1232.773706420071
+        },
+        "BC-BEAM": {
+          "errors": 263,
+          "nmse_sum": 1074.9987335960943
+        },
+        "CDD-SSB": {
+          "errors": 27,
+          "nmse_sum": 262.53684560596184
+        },
+        "CDD-BEAM": {
+          "errors": 26,
+          "nmse_sum": 242.29360857884652
+        },
+        "CDD-IDEAL": {
+          "errors": 24,
+          "nmse_sum": 220.3955454506413
+        },
+        "PERF-baseline": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-pol_cycling": {
+          "errors": 0,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cycling": {
+          "errors": 1,
+          "nmse_sum": 0.0
+        },
+        "PERF-beam_cdd": {
+          "errors": 13,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {
+        "B-SSB|P-SSB": {
+          "n00": 4819,
+          "n01": 347,
+          "n10": 21,
+          "n11": 43
+        },
+        "B-SSB|BC-SSB": {
+          "n00": 4870,
+          "n01": 296,
+          "n10": 31,
+          "n11": 33
+        },
+        "B-SSB|BC-BEAM": {
+          "n00": 4927,
+          "n01": 239,
+          "n10": 40,
+          "n11": 24
+        },
+        "B-SSB|CDD-SSB": {
+          "n00": 5139,
+          "n01": 27,
+          "n10": 64,
+          "n11": 0
+        },
+        "B-SSB|CDD-BEAM": {
+          "n00": 5140,
+          "n01": 26,
+          "n10": 64,
+          "n11": 0
+        },
+        "B-SSB|CDD-IDEAL": {
+          "n00": 5142,
+          "n01": 24,
+          "n10": 64,
+          "n11": 0
+        },
+        "P-SSB|BC-SSB": {
+          "n00": 4579,
+          "n01": 261,
+          "n10": 322,
+          "n11": 68
+        },
+        "P-SSB|BC-BEAM": {
+          "n00": 4627,
+          "n01": 213,
+          "n10": 340,
+          "n11": 50
+        },
+        "P-SSB|CDD-SSB": {
+          "n00": 4815,
+          "n01": 25,
+          "n10": 388,
+          "n11": 2
+        },
+        "P-SSB|CDD-BEAM": {
+          "n00": 4816,
+          "n01": 24,
+          "n10": 388,
+          "n11": 2
+        },
+        "P-SSB|CDD-IDEAL": {
+          "n00": 4817,
+          "n01": 23,
+          "n10": 389,
+          "n11": 1
+        },
+        "BC-SSB|BC-BEAM": {
+          "n00": 4884,
+          "n01": 17,
+          "n10": 83,
+          "n11": 246
+        },
+        "BC-SSB|CDD-SSB": {
+          "n00": 4890,
+          "n01": 11,
+          "n10": 313,
+          "n11": 16
+        },
+        "BC-SSB|CDD-BEAM": {
+          "n00": 4888,
+          "n01": 13,
+          "n10": 316,
+          "n11": 13
+        },
+        "BC-SSB|CDD-IDEAL": {
+          "n00": 4891,
+          "n01": 10,
+          "n10": 315,
+          "n11": 14
+        },
+        "BC-BEAM|CDD-SSB": {
+          "n00": 4956,
+          "n01": 11,
+          "n10": 247,
+          "n11": 16
+        },
+        "BC-BEAM|CDD-BEAM": {
+          "n00": 4955,
+          "n01": 12,
+          "n10": 249,
+          "n11": 14
+        },
+        "BC-BEAM|CDD-IDEAL": {
+          "n00": 4958,
+          "n01": 9,
+          "n10": 248,
+          "n11": 15
+        },
+        "CDD-SSB|CDD-BEAM": {
+          "n00": 5198,
+          "n01": 5,
+          "n10": 6,
+          "n11": 21
+        },
+        "CDD-SSB|CDD-IDEAL": {
+          "n00": 5200,
+          "n01": 3,
+          "n10": 6,
+          "n11": 21
+        },
+        "CDD-BEAM|CDD-IDEAL": {
+          "n00": 5202,
+          "n01": 2,
+          "n10": 4,
+          "n11": 22
+        }
+      },
+      "complete": false,
+      "stop_reason": "running"
+    }
+  }
+}

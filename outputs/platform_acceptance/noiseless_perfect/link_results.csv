@@ -1,0 +1,5 @@
+snr_db,drop_index,radius_m,azimuth_deg,los,scheme,estimator,crc_ok,bit_errors,nmse,selected_ssb,reference_power
+inf,0,102.29018737268659,56.176761724585816,False,baseline,perfect,True,0,0.0,0,6.475757054028239e-10
+inf,0,102.29018737268659,56.176761724585816,False,pol_cycling,perfect,True,0,0.0,0,6.475757054028239e-10
+inf,0,102.29018737268659,56.176761724585816,False,beam_cycling,perfect,True,0,0.0,0,6.475757054028239e-10
+inf,0,102.29018737268659,56.176761724585816,False,beam_cdd,perfect,True,0,0.0,0,6.475757054028239e-10

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-09-14T15:17:48.738647+00:00",
+  "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-002.yaml",
+  "config_sha256": "45c0b6d61f913fbd0d963cd293be44fb08757bc9b8d6af00e82f5994c09e462e",
+  "codebook_sha256": "3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259",
+  "master_seed": 20260913,
+  "estimated_csi_curves": [
+    {
+      "id": "B-SSB",
+      "scheme": "baseline",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "P-SSB",
+      "scheme": "pol_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "BC-SSB",
+      "scheme": "beam_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "BC-BEAM",
+      "scheme": "beam_cycling",
+      "covariance": "per_beam_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "CDD-SSB",
+      "scheme": "beam_cdd",
+      "covariance": "cdd_ssb_pdp",
+      "window_prbs": 48
+    },
+    {
+      "id": "CDD-BEAM",
+      "scheme": "beam_cdd",
+      "covariance": "cdd_per_beam_pdp",
+      "window_prbs": 48
+    },
+    {
+      "id": "CDD-IDEAL",
+      "scheme": "beam_cdd",
+      "covariance": "ideal_covariance",
+      "window_prbs": 48
+    }
+  ],
+  "perfect_csi_schemes": [
+    "baseline",
+    "pol_cycling",
+    "beam_cycling",
+    "beam_cdd"
+  ],
+  "actual_snr_db": [
+    -10.0,
+    -12.0
+  ],
+  "fixed_drops_per_snr": 500,
+  "stopping": {
+    "snr_strategy": "fixed_common_drops",
+    "snr_points_db": [
+      -10,
+      -12
+    ],
+    "fixed_drops_per_snr": 500,
+    "drop_index_start": 0,
+    "progress_interval_drops": 10,
+    "confidence_level": 0.95,
+    "confidence_interval": "wilson",
+    "purpose": "coarse_preview_before_adaptive_refinement"
+  },
+  "normalization": {
+    "reference": "selected_ssb_instantaneous_wideband_average_per_rx_power",
+    "common_across_schemes_within_drop": true,
+    "per_scheme_renormalization": false,
+    "selected_ssb_normalized_power_per_drop": 1.0,
+    "horizontal_axis": "EsN0_after_common_per_drop_selected_ssb_normalization"
+  },
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "1.26.4",
+    "PyYAML": "6.0",
+    "tensorflow": "2.15.1",
+    "sionna": "1.0.2"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "captured_utc": "2026-09-17T06:27:50.718163+00:00",
+  "python": {
+    "version": "3.11.9",
+    "executable": "C:\\Users\\z00873277\\AppData\\Local\\miniforge3\\envs\\sionna102\\python.exe"
+  },
+  "platform": "Windows-10-10.0.26100-SP0",
+  "packages": {
+    "numpy": {
+      "version": "1.26.4",
+      "origin": "C:\\Users\\z00873277\\AppData\\Local\\miniforge3\\envs\\sionna102\\Lib\\site-packages\\numpy\\__init__.py"
+    },
+    "PyYAML": {
+      "version": "6.0",
+      "origin": "C:\\Users\\z00873277\\AppData\\Local\\miniforge3\\envs\\sionna102\\Lib\\site-packages\\yaml\\__init__.py"
+    },
+    "tensorflow": {
+      "version": "2.15.1",
+      "origin": "C:\\Users\\z00873277\\AppData\\Local\\miniforge3\\envs\\sionna102\\Lib\\site-packages\\tensorflow\\__init__.py"
+    },
+    "sionna": {
+      "version": "1.0.2",
+      "origin": "C:\\Users\\z00873277\\AppData\\Local\\miniforge3\\envs\\sionna102\\Lib\\site-packages\\sionna\\__init__.py"
+    }
+  },
+  "tensorflow_gpu_devices": null
+}

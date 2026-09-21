@@ -1,0 +1,16 @@
+snr_db,curve_id,curve_type,scheme,covariance,block_errors,blocks,bler,wilson_low,wilson_high,stop_reason
+-17.5,B-SSB,estimated_csi,baseline,ssb_pdp,123,1000,0.123,0.10407414325107295,0.1448112326470356,fixed_common_drops
+-17.5,P2-SSB,estimated_csi,pol_cycling_prg2,ssb_pdp,128,1000,0.128,0.10870752216300937,0.15013958615024364,fixed_common_drops
+-17.5,P6-SSB,estimated_csi,pol_cycling_prg6,ssb_pdp,128,1000,0.128,0.10870752216300937,0.15013958615024364,fixed_common_drops
+-17.5,BC-SSB,estimated_csi,beam_cycling,ssb_pdp,132,1000,0.132,0.1124216361480769,0.15439485809729173,fixed_common_drops
+-17.5,CDD-SSB,estimated_csi,beam_cdd,cdd_ssb_pdp,103,1000,0.103,0.08565481000508716,0.1233836362324436,fixed_common_drops
+-16.5,B-SSB,estimated_csi,baseline,ssb_pdp,106,1000,0.106,0.08840506686305155,0.12661041882356588,fixed_common_drops
+-16.5,P2-SSB,estimated_csi,pol_cycling_prg2,ssb_pdp,109,1000,0.109,0.09116003338451377,0.12983249175119033,fixed_common_drops
+-16.5,P6-SSB,estimated_csi,pol_cycling_prg6,ssb_pdp,110,1000,0.11,0.0920793726718571,0.1309054989468759,fixed_common_drops
+-16.5,BC-SSB,estimated_csi,beam_cycling,ssb_pdp,107,1000,0.107,0.08932287430802002,0.12768495786162629,fixed_common_drops
+-16.5,CDD-SSB,estimated_csi,beam_cdd,cdd_ssb_pdp,83,1000,0.083,0.0674550214428993,0.10173649513405367,fixed_common_drops
+-15.5,B-SSB,estimated_csi,baseline,ssb_pdp,86,1000,0.086,0.07016852477576037,0.10500003125027925,fixed_common_drops
+-15.5,P2-SSB,estimated_csi,pol_cycling_prg2,ssb_pdp,87,1000,0.087,0.07107442145237501,0.10608648105669351,fixed_common_drops
+-15.5,P6-SSB,estimated_csi,pol_cycling_prg6,ssb_pdp,87,1000,0.087,0.07107442145237501,0.10608648105669351,fixed_common_drops
+-15.5,BC-SSB,estimated_csi,beam_cycling,ssb_pdp,83,1000,0.083,0.0674550214428993,0.10173649513405367,fixed_common_drops
+-15.5,CDD-SSB,estimated_csi,beam_cdd,cdd_ssb_pdp,75,1000,0.075,0.06025180497346737,0.09300093973925448,fixed_common_drops

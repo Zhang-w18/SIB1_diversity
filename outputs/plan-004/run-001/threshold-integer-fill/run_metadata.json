@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-09-18T10:49:54.556148+00:00",
+  "config": "D:\\2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-004-threshold-integer-fill.yaml",
+  "config_sha256": "6e6269337b3a76cf1944523cfb8da910bf69a25960c679a2e77c84563e4c259e",
+  "codebook_sha256": "3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259",
+  "master_seed": 20260913,
+  "link_mode": "fixed_radius_ls_normalized",
+  "phase": null,
+  "estimated_csi_curves": [
+    {
+      "id": "B-SSB",
+      "scheme": "baseline",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2,
+      "prg_size_prbs": 2
+    },
+    {
+      "id": "P2-SSB",
+      "label": "pol_cycling_prg2",
+      "scheme": "pol_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2,
+      "prg_size_prbs": 2
+    },
+    {
+      "id": "P6-SSB",
+      "label": "pol_cycling_prg6",
+      "scheme": "pol_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2,
+      "prg_size_prbs": 6
+    },
+    {
+      "id": "BC-SSB",
+      "scheme": "beam_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2,
+      "prg_size_prbs": 2
+    },
+    {
+      "id": "CDD-SSB",
+      "scheme": "beam_cdd",
+      "covariance": "cdd_ssb_pdp",
+      "window_prbs": 48,
+      "prg_size_prbs": 2
+    }
+  ],
+  "perfect_csi_curves": [],
+  "actual_snr_db": [
+    -18.0,
+    -17.0,
+    -16.0,
+    -15.0
+  ],
+  "snr_stream_indices": {
+    "-18.0": 0,
+    "-17.0": 2,
+    "-16.0": 4,
+    "-15.0": 6
+  },
+  "fixed_drops_per_snr": 500,
+  "stopping": {
+    "snr_strategy": "fixed_common_drops",
+    "snr_points_db": [
+      -18,
+      -17,
+      -16,
+      -15
+    ],
+    "fixed_drops_per_snr": 500,
+    "target_block_errors_diagnostic": 100,
+    "snr_stream_grid_origin_db": -18.0,
+    "snr_stream_grid_step_db": 0.5,
+    "drop_index_start": 1500,
+    "progress_interval_drops": 10,
+    "confidence_level": 0.95,
+    "confidence_interval": "wilson",
+    "stopping_rule": "exactly_500_common_drops_per_snr_no_early_stop",
+    "purpose": "complete_balanced_drop_1000_to_1999_at_integer_threshold_points"
+  },
+  "normalization": {
+    "reference_definition": "100 m horizontal-radius UMa LOS basic path gain, no shadow fading; PL=28+22log10(d3D)+20log10(fc_GHz)",
+    "reference_large_scale_power_gain_linear": 1.21373630034847e-09,
+    "reference_large_scale_power_gain_db": -89.158756590132,
+    "large_scale_drop_gain_definition": "sionna_step_12_pathloss_and_shadow_fading_scalar_power_gain",
+    "channel_scaling": "G0_over_Gd",
+    "noise_variance": "G0_times_10_power_minus_gamma0_db_over_10",
+    "per_scheme_renormalization": false,
+    "horizontal_axis": "nominal_reference_Es_over_N0_gamma0_db"
+  },
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "1.26.4",
+    "PyYAML": "6.0",
+    "tensorflow": "2.15.1",
+    "sionna": "1.0.2"
+  }
+}

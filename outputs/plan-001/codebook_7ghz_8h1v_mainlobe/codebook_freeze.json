@@ -1,0 +1,21 @@
+{
+  "status": "frozen",
+  "freeze_date": "2026-09-13",
+  "experiment": "plan-001",
+  "weights_file": "codebook_weights.npz",
+  "weights_sha256": "3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259",
+  "researcher_accepted_edge_rolloff": true,
+  "controlled_region": {
+    "azimuth_deg": [-60.0, 60.0],
+    "downtilt_deg": [11.549261823559357, 17.397512885605053]
+  },
+  "acceptance_metrics": {
+    "ssb_joint_min_gain_db": 3.9759533079716016,
+    "secondary_joint_min_gain_db": 6.016191502588204,
+    "ssb_min_boundary_joint_gain_db": 5.283493504648371,
+    "secondary_min_boundary_joint_gain_db": 5.979711474733538,
+    "minimum_child_envelope_margin_over_parent_db": 0.17151957021770858,
+    "common_vertical_null_inside_controlled_region": false
+  },
+  "verdict": "pass"
+}

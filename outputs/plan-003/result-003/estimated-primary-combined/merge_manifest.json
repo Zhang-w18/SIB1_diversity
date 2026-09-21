@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "method": {
+    "bler": "sum block_errors and blocks; recompute 95% Wilson interval",
+    "nmse": "blocks-weighted mean",
+    "paired_counts": "sum blocks and n00/n01/n10/n11"
+  },
+  "sources": [
+    {
+      "name": "run-001/estimated",
+      "path": "D:\\07 2026\\Simulation\\SIB1_diversity\\outputs\\plan-003\\run-001\\estimated"
+    },
+    {
+      "name": "run-002/wide_2",
+      "path": "D:\\07 2026\\Simulation\\SIB1_diversity\\outputs\\plan-003\\run-002\\wide_2"
+    },
+    {
+      "name": "run-004/threshold",
+      "path": "D:\\07 2026\\Simulation\\SIB1_diversity\\outputs\\plan-003\\run-004\\threshold"
+    },
+    {
+      "name": "run-004/core",
+      "path": "D:\\07 2026\\Simulation\\SIB1_diversity\\outputs\\plan-003\\run-004\\core"
+    }
+  ],
+  "excluded": [
+    "outputs/plan-003/run-003/smooth"
+  ],
+  "outputs": {
+    "bler.csv": {
+      "sha256": "44c7c265d98df625f2dcba3383abdac656542ff7d6a6899836fc92c17332a32a",
+      "bytes": 12087
+    },
+    "nmse.csv": {
+      "sha256": "74b3987d1ff5771869aaa5a70dcc5e8ef64adee141bff20876be795cc64189a5",
+      "bytes": 7654
+    },
+    "paired_counts.csv": {
+      "sha256": "fcee74f139fbcdff198380bd67a1c82e0a51e67cd505495436e4c8e39c389b24",
+      "bytes": 10670
+    },
+    "bler.png": {
+      "sha256": "0df3c2fff0a08447f9845ef983c3717536efcf969d61853598b035f3aa76de05",
+      "bytes": 144563
+    },
+    "nmse.png": {
+      "sha256": "c7e6a6bc5be7ffb948df20e3f0947b49cb106d7858e73825c749546daf3428e7",
+      "bytes": 147536
+    }
+  }
+}

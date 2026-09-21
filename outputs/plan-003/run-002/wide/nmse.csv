@@ -1,0 +1,11 @@
+snr_db,curve_id,scheme,covariance,blocks,mean_nmse
+-14.0,B-SSB,baseline,ssb_pdp,500,0.09777881966261623
+-14.0,P2-SSB,pol_cycling_prg2,ssb_pdp,500,0.09811390378466726
+-14.0,P6-SSB,pol_cycling_prg6,ssb_pdp,500,0.09803060430485018
+-14.0,BC-SSB,beam_cycling,ssb_pdp,500,0.09365831230749924
+-14.0,CDD-SSB,beam_cdd,cdd_ssb_pdp,500,0.02230932241715872
+-13.0,B-SSB,baseline,ssb_pdp,500,0.0834679631871095
+-13.0,P2-SSB,pol_cycling_prg2,ssb_pdp,500,0.08366396766065393
+-13.0,P6-SSB,pol_cycling_prg6,ssb_pdp,500,0.0839082124953602
+-13.0,BC-SSB,beam_cycling,ssb_pdp,500,0.07947405959113275
+-13.0,CDD-SSB,beam_cdd,cdd_ssb_pdp,500,0.01839651692196976

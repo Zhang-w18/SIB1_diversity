@@ -1,0 +1,11 @@
+snr_db,curve_id,curve_type,scheme,covariance,block_errors,blocks,bler,wilson_low,wilson_high,stop_reason
+-14.0,B-SSB,estimated_csi,baseline,ssb_pdp,39,500,0.078,0.05758139347616159,0.10485354987338852,fixed_common_drops
+-14.0,P2-SSB,estimated_csi,pol_cycling_prg2,ssb_pdp,41,500,0.082,0.06101908946846895,0.10935485915738874,fixed_common_drops
+-14.0,P6-SSB,estimated_csi,pol_cycling_prg6,ssb_pdp,40,500,0.08,0.0592981294098526,0.1071063165778513,fixed_common_drops
+-14.0,BC-SSB,estimated_csi,beam_cycling,ssb_pdp,36,500,0.072,0.0524580314181262,0.09806840401696253,fixed_common_drops
+-14.0,CDD-SSB,estimated_csi,beam_cdd,cdd_ssb_pdp,34,500,0.068,0.04906650742490687,0.0935209227338743,fixed_common_drops
+-13.0,B-SSB,estimated_csi,baseline,ssb_pdp,34,500,0.068,0.04906650742490687,0.0935209227338743,fixed_common_drops
+-13.0,P2-SSB,estimated_csi,pol_cycling_prg2,ssb_pdp,32,500,0.064,0.04569601604478943,0.08895240883768415,fixed_common_drops
+-13.0,P6-SSB,estimated_csi,pol_cycling_prg6,ssb_pdp,32,500,0.064,0.04569601604478943,0.08895240883768415,fixed_common_drops
+-13.0,BC-SSB,estimated_csi,beam_cycling,ssb_pdp,33,500,0.066,0.04737852635977388,0.0912394011608535,fixed_common_drops
+-13.0,CDD-SSB,estimated_csi,beam_cdd,cdd_ssb_pdp,27,500,0.054,0.037374350181057524,0.07742656151064709,fixed_common_drops

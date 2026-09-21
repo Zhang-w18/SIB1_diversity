@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-09-13T14:00:09.866693+00:00",
+  "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-001.yaml",
+  "config_sha256": "72770899120d498750d41c85511202c86fffd08986d454b852356cc963097c61",
+  "codebook_sha256": "3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259",
+  "master_seed": 20260913,
+  "estimated_csi_curves": [
+    {
+      "id": "B-SSB",
+      "scheme": "baseline",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "P-SSB",
+      "scheme": "pol_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "BC-SSB",
+      "scheme": "beam_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "BC-BEAM",
+      "scheme": "beam_cycling",
+      "covariance": "per_beam_pdp",
+      "window_prbs": 2
+    },
+    {
+      "id": "CDD-SSB",
+      "scheme": "beam_cdd",
+      "covariance": "cdd_ssb_pdp",
+      "window_prbs": 48
+    },
+    {
+      "id": "CDD-BEAM",
+      "scheme": "beam_cdd",
+      "covariance": "cdd_per_beam_pdp",
+      "window_prbs": 48
+    },
+    {
+      "id": "CDD-IDEAL",
+      "scheme": "beam_cdd",
+      "covariance": "ideal_covariance",
+      "window_prbs": 48
+    }
+  ],
+  "perfect_csi_schemes": [
+    "baseline",
+    "pol_cycling",
+    "beam_cycling",
+    "beam_cdd"
+  ],
+  "actual_snr_db": [
+    20.0
+  ],
+  "stopping": {
+    "snr_strategy": "adaptive_bracket_then_refine",
+    "search_range_db": [
+      20.0,
+      20.0
+    ],
+    "coarse_step_db": 2,
+    "refinement_step_db": 1,
+    "bler_interest_range": [
+      0.01,
+      0.1
+    ],
+    "drop_index_start": 0,
+    "min_drops_per_snr": 1,
+    "target_block_errors": 1,
+    "max_drops_per_snr_safety_cap": 1,
+    "stopping_scope": "all_seven_estimated_csi_curves_resolved_on_common_drops",
+    "curve_resolved_when": [
+      "target_block_errors_reached",
+      "wilson_upper_below_1e-2"
+    ],
+    "stop_higher_snr_when": "all_estimated_csi_curves_wilson_upper_below_1e-2",
+    "confidence_level": 0.95,
+    "confidence_interval": "wilson",
+    "below_interest_reporting": "errors_over_blocks_and_wilson_upper_no_extrapolation",
+    "search_start_db": 20.0
+  },
+  "normalization": {
+    "reference": "selected_ssb_instantaneous_wideband_average_per_rx_power",
+    "common_across_schemes_within_drop": true,
+    "per_scheme_renormalization": false,
+    "selected_ssb_normalized_power_per_drop": 1.0,
+    "horizontal_axis": "EsN0_after_common_per_drop_selected_ssb_normalization"
+  },
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "1.26.4",
+    "PyYAML": "6.0",
+    "tensorflow": "2.15.1",
+    "sionna": "1.0.2"
+  }
+}

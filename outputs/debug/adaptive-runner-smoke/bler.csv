@@ -1,0 +1,12 @@
+snr_db,curve_id,curve_type,scheme,covariance,block_errors,blocks,bler,wilson_low,wilson_high,stop_reason
+20.0,B-SSB,estimated_csi,baseline,ssb_pdp,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,P-SSB,estimated_csi,pol_cycling,ssb_pdp,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,BC-SSB,estimated_csi,beam_cycling,ssb_pdp,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,BC-BEAM,estimated_csi,beam_cycling,per_beam_pdp,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,CDD-SSB,estimated_csi,beam_cdd,cdd_ssb_pdp,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,CDD-BEAM,estimated_csi,beam_cdd,cdd_per_beam_pdp,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,CDD-IDEAL,estimated_csi,beam_cdd,ideal_covariance,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,PERF-baseline,perfect_csi,baseline,perfect_csi,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,PERF-pol_cycling,perfect_csi,pol_cycling,perfect_csi,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,PERF-beam_cycling,perfect_csi,beam_cycling,perfect_csi,0,1,0.0,0.0,0.7934506856227626,safety_cap
+20.0,PERF-beam_cdd,perfect_csi,beam_cdd,perfect_csi,0,1,0.0,0.0,0.7934506856227626,safety_cap

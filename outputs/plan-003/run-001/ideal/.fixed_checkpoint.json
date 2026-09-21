@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "config_sha256": "66db6e18cbf9acf3ab66e3f3eb5fab195b7341b2a7c41488ac54e8eb3935ccd8",
+  "codebook_sha256": "3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259",
+  "points": {
+    "-12": {
+      "blocks": 500,
+      "curves": {
+        "PERF-B": {
+          "errors": 30,
+          "nmse_sum": 0.0
+        },
+        "PERF-P2": {
+          "errors": 28,
+          "nmse_sum": 0.0
+        },
+        "PERF-P6": {
+          "errors": 29,
+          "nmse_sum": 0.0
+        },
+        "PERF-BC": {
+          "errors": 32,
+          "nmse_sum": 0.0
+        },
+        "PERF-CDD": {
+          "errors": 30,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {},
+      "complete": true,
+      "stop_reason": "fixed_common_drops"
+    },
+    "-11.5": {
+      "blocks": 500,
+      "curves": {
+        "PERF-B": {
+          "errors": 27,
+          "nmse_sum": 0.0
+        },
+        "PERF-P2": {
+          "errors": 27,
+          "nmse_sum": 0.0
+        },
+        "PERF-P6": {
+          "errors": 26,
+          "nmse_sum": 0.0
+        },
+        "PERF-BC": {
+          "errors": 26,
+          "nmse_sum": 0.0
+        },
+        "PERF-CDD": {
+          "errors": 27,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {},
+      "complete": true,
+      "stop_reason": "fixed_common_drops"
+    },
+    "-11": {
+      "blocks": 500,
+      "curves": {
+        "PERF-B": {
+          "errors": 25,
+          "nmse_sum": 0.0
+        },
+        "PERF-P2": {
+          "errors": 23,
+          "nmse_sum": 0.0
+        },
+        "PERF-P6": {
+          "errors": 23,
+          "nmse_sum": 0.0
+        },
+        "PERF-BC": {
+          "errors": 24,
+          "nmse_sum": 0.0
+        },
+        "PERF-CDD": {
+          "errors": 25,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {},
+      "complete": true,
+      "stop_reason": "fixed_common_drops"
+    },
+    "-10.5": {
+      "blocks": 500,
+      "curves": {
+        "PERF-B": {
+          "errors": 23,
+          "nmse_sum": 0.0
+        },
+        "PERF-P2": {
+          "errors": 22,
+          "nmse_sum": 0.0
+        },
+        "PERF-P6": {
+          "errors": 22,
+          "nmse_sum": 0.0
+        },
+        "PERF-BC": {
+          "errors": 18,
+          "nmse_sum": 0.0
+        },
+        "PERF-CDD": {
+          "errors": 20,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {},
+      "complete": true,
+      "stop_reason": "fixed_common_drops"
+    },
+    "-10": {
+      "blocks": 140,
+      "curves": {
+        "PERF-B": {
+          "errors": 2,
+          "nmse_sum": 0.0
+        },
+        "PERF-P2": {
+          "errors": 4,
+          "nmse_sum": 0.0
+        },
+        "PERF-P6": {
+          "errors": 3,
+          "nmse_sum": 0.0
+        },
+        "PERF-BC": {
+          "errors": 1,
+          "nmse_sum": 0.0
+        },
+        "PERF-CDD": {
+          "errors": 4,
+          "nmse_sum": 0.0
+        }
+      },
+      "pairs": {},
+      "complete": false,
+      "stop_reason": "running"
+    }
+  }
+}

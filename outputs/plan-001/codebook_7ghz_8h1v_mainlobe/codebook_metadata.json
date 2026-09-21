@@ -1,0 +1,203 @@
+{
+  "coordinate_system": "global phi; positive-down global eta",
+  "mechanical_downtilt_deg": 12.0,
+  "ae_order": "row-major (vertical, horizontal), single polarization",
+  "txru_order": "row-major (vertical, horizontal), single polarization",
+  "weight_normalization": "unit AE-domain Euclidean norm per beam",
+  "ssb_regions": [
+    {
+      "index": 0,
+      "phi_min_deg": -60.0,
+      "phi_max_deg": -40.5053503274186,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": null
+    },
+    {
+      "index": 1,
+      "phi_min_deg": -40.5053503274186,
+      "phi_max_deg": -25.65890627325528,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": null
+    },
+    {
+      "index": 2,
+      "phi_min_deg": -25.65890627325528,
+      "phi_max_deg": -12.503916617342561,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": null
+    },
+    {
+      "index": 3,
+      "phi_min_deg": -12.503916617342561,
+      "phi_max_deg": 0.0,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": null
+    },
+    {
+      "index": 4,
+      "phi_min_deg": 0.0,
+      "phi_max_deg": 12.503916617342561,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": null
+    },
+    {
+      "index": 5,
+      "phi_min_deg": 12.503916617342561,
+      "phi_max_deg": 25.65890627325528,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": null
+    },
+    {
+      "index": 6,
+      "phi_min_deg": 25.65890627325528,
+      "phi_max_deg": 40.5053503274186,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": null
+    },
+    {
+      "index": 7,
+      "phi_min_deg": 40.5053503274186,
+      "phi_max_deg": 60.0,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": null
+    }
+  ],
+  "secondary_regions": [
+    {
+      "index": 0,
+      "phi_min_deg": -60.0,
+      "phi_max_deg": -49.26819412262293,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 0
+    },
+    {
+      "index": 1,
+      "phi_min_deg": -49.26819412262293,
+      "phi_max_deg": -40.5053503274186,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 0
+    },
+    {
+      "index": 2,
+      "phi_min_deg": -40.5053503274186,
+      "phi_max_deg": -32.769854245498124,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 1
+    },
+    {
+      "index": 3,
+      "phi_min_deg": -32.769854245498124,
+      "phi_max_deg": -25.65890627325528,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 1
+    },
+    {
+      "index": 4,
+      "phi_min_deg": -25.65890627325528,
+      "phi_max_deg": -18.951006610626234,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 2
+    },
+    {
+      "index": 5,
+      "phi_min_deg": -18.951006610626234,
+      "phi_max_deg": -12.503916617342561,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 2
+    },
+    {
+      "index": 6,
+      "phi_min_deg": -12.503916617342561,
+      "phi_max_deg": -6.214628566261308,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 3
+    },
+    {
+      "index": 7,
+      "phi_min_deg": -6.214628566261308,
+      "phi_max_deg": 0.0,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 3
+    },
+    {
+      "index": 8,
+      "phi_min_deg": 0.0,
+      "phi_max_deg": 6.214628566261308,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 4
+    },
+    {
+      "index": 9,
+      "phi_min_deg": 6.214628566261308,
+      "phi_max_deg": 12.503916617342561,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 4
+    },
+    {
+      "index": 10,
+      "phi_min_deg": 12.503916617342561,
+      "phi_max_deg": 18.951006610626234,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 5
+    },
+    {
+      "index": 11,
+      "phi_min_deg": 18.951006610626234,
+      "phi_max_deg": 25.65890627325528,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 5
+    },
+    {
+      "index": 12,
+      "phi_min_deg": 25.65890627325528,
+      "phi_max_deg": 32.769854245498124,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 6
+    },
+    {
+      "index": 13,
+      "phi_min_deg": 32.769854245498124,
+      "phi_max_deg": 40.5053503274186,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 6
+    },
+    {
+      "index": 14,
+      "phi_min_deg": 40.5053503274186,
+      "phi_max_deg": 49.26819412262293,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 7
+    },
+    {
+      "index": 15,
+      "phi_min_deg": 49.26819412262293,
+      "phi_max_deg": 60.0,
+      "eta_min_deg": 11.549261823559357,
+      "eta_max_deg": 17.397512885605053,
+      "parent_ssb": 7
+    }
+  ]
+}

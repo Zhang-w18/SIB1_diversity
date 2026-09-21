@@ -1,0 +1,5 @@
+Starting Plan 003 phase: estimated
+Output: D:\07 2026\Simulation\SIB1_diversity\outputs\plan-003\run-001\estimated
+Re-run with the same RunId and phase to resume an interrupted run.
+Fixed curve run: SNR=[-11.0, -10.5, -10.0, -9.5, -9.0, -8.5], 500 common drops/SNR; 8 estimated-CSI curves + 0 Perfect-CSI diagnostics
+SNR -11 dB starting/resuming at 0 common drops
