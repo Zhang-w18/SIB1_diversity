@@ -1,0 +1,5 @@
+snr_db,drop_index,radius_m,azimuth_deg,los,scheme,estimator,crc_ok,bit_errors,nmse,selected_ssb,selected_ssb_power_before_scaling,selected_ssb_power_after_scaling,large_scale_power_gain,channel_power_scale,noise_variance,curve_id
+-2.0,0,0.0,6.25,False,baseline,perfect,True,0,0.0,3,146.68743379559731,146.68743379559731,1.0,1.0,693.0145604155401,
+-2.0,0,0.0,6.25,False,pol_cycling,perfect,True,0,0.0,3,146.68743379559731,146.68743379559731,1.0,1.0,693.0145604155401,
+-2.0,0,0.0,6.25,False,beam_cycling,perfect,True,0,0.0,3,146.68743379559731,146.68743379559731,1.0,1.0,693.0145604155401,
+-2.0,0,0.0,6.25,False,beam_cdd,perfect,True,0,0.0,3,146.68743379559731,146.68743379559731,1.0,1.0,693.0145604155401,

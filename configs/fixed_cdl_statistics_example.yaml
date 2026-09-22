@@ -1,0 +1,126 @@
+schema_version: 1
+
+run:
+  seed: 20260921
+  link_mode: fixed_cdl_statistics
+  output_root: outputs
+  schemes: [baseline, pol_cycling, beam_cycling, beam_cdd]
+
+scenario:
+  model: CDL
+  carrier_frequency_hz: 7.0e9
+  bs_height_m: 25.0
+  ue_height_m: 1.5
+  isd_m: 500.0
+  ue_distance_min_m: 0.0
+  ue_distance_max_m: 0.0
+  sector_azimuth_min_deg: 0.0
+  sector_azimuth_max_deg: 0.0
+  ue_per_drop: 1
+
+fixed_cdl_statistics:
+  profile: C
+  delay_spread_s: 3.0e-7
+  covariance_realizations: 1000
+  statistics_seed: 20261001
+  realization_seed: 20262001
+  ue_speed_mps: 0.0
+  velocity_azimuth_deg: 0.0
+  velocity_elevation_deg: 0.0
+  time_steps_per_slot: 1
+  time_step_s: 0.0
+  ue_orientation_deg: [180.0, 0.0, 0.0]
+  angle_transform:
+    mean_aod_deg: 0.0
+    aod_scale: 1.0
+    aoa_scale: 1.0
+    zod_scale: 1.0
+    zoa_scale: 1.0
+
+panel:
+  azimuth_deg: 0.0
+  mechanical_downtilt_deg: 12.0
+  electrical_downtilt_deg: 0.0
+
+bs_array:
+  vertical_aes: 24
+  horizontal_aes: 16
+  polarizations: 2
+  vertical_txrus_per_pol: 4
+  horizontal_txrus_per_pol: 16
+  horizontal_spacing_lambda: 0.5
+  vertical_spacing_lambda: 0.8
+  txru_subarray_vertical_aes: 6
+  txru_subarray_horizontal_aes: 1
+  txru_mapping: contiguous_equal_phase_column_normalized
+
+ue_array:
+  vertical_elements: 1
+  horizontal_elements: 2
+  polarizations: 2
+
+nr:
+  subcarrier_spacing_hz: 30000
+  cyclic_prefix: normal
+  bwp_prbs: 106
+  pdsch_prbs: 48
+  allocation: centered
+  slot_symbols: 14
+  pdsch_start_symbol: 2
+  pdsch_length_symbols: 12
+  dmrs_symbols: [2, 11]
+  dmrs_configuration_type: 1
+  dmrs_cdm_groups_without_data: 1
+  dmrs_res_per_prb_per_symbol: 6
+  logical_dmrs_port: 1000
+  prg_size_prbs: 2
+  rank: 1
+  modulation: QPSK
+  mcs_index: 0
+  target_code_rate_x1024: 120
+  rv: 0
+  x_overhead: 0
+  tbs_bits: 1480
+  tb_crc_bits: 16
+  si_rnti: 65535
+
+codebooks:
+  ssb_horizontal_beams: 8
+  ssb_vertical_beams: 1
+  secondary_horizontal_beams: 16
+  secondary_vertical_beams: 1
+  secondary_per_selected_ssb: 2
+  synthesis: weighted_lls_flat_top
+  weights_sha256: 3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259
+
+schemes:
+  baseline_pol_phase_deg: 0.0
+  pol_cycling_phase_deg: [0.0, 90.0]
+  pol_cycling_hold_prgs: 1
+  beam_cycling_hold_prgs: 1
+  beam_cycling_pattern: alternate_two_children_of_selected_ssb
+  beam_cdd_beams: 2
+  beam_cdd_delay_definition: active_band_dft_grid
+  beam_cdd_delay_grid_modulus: 576
+  beam_cdd_delay_grid_indices: [0, 1]
+  beam_cdd_delay_samples: [0.0, 3.5555555555555554]
+  beam_cdd_delay_seconds: [0.0, 5.787037037037037e-8]
+  beam_cdd_phase_denominator: 576
+  normalization: per_active_subcarrier
+
+receiver:
+  rx_branches: 4
+  combining: MRC
+  primary_prior: ssb_pdp
+  estimators: [perfect_csi, ls, lmmse]
+  covariance_storage: runtime_window_only
+  baseline_lmmse_window_prbs: 2
+  pol_cycling_lmmse_window_prbs: 2
+  beam_cycling_lmmse_window_prbs: 2
+  beam_cdd_lmmse_window_prbs: 48
+
+monte_carlo:
+  snr_db: [-8, -6, -4, -2, 0, 2, 4, 6]
+  target_block_errors: 100
+  max_drops_per_snr: 10000
+  confidence_level: 0.95

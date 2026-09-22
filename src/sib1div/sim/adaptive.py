@@ -15,7 +15,7 @@ import numpy as np
 import yaml
 
 from sib1div.analysis import wilson_interval
-from sib1div.channel import UMaChannel
+from sib1div.channel import FixedCDLChannel, UMaChannel
 from sib1div.config import SimulationConfig
 from sib1div.runtime import collect_environment
 
@@ -381,7 +381,11 @@ def run_fixed_curve_simulation(
             encoding="utf-8",
         )
 
-    channel = UMaChannel(config)
+    channel = (
+        FixedCDLChannel(config, ssb)
+        if config.data["run"]["link_mode"] == "fixed_cdl_statistics"
+        else UMaChannel(config)
+    )
     total_blocks = len(snr_values) * drops_per_snr
     completed_at_start = sum(
         int(point.get("blocks", 0)) for point in state["points"].values()
@@ -454,9 +458,10 @@ def run_fixed_curve_simulation(
     bler_rows, nmse_rows, paired_rows = _summary_rows(state, estimated_ids, curve_labels, confidence)
     _write_fixed_outputs(output, bler_rows, nmse_rows, paired_rows)
     experiment_id = str(config.data.get("experiment", {}).get("id", "fixed curves"))
+    mode = str(config.data["run"]["link_mode"])
     x_label = (
-        "Nominal reference Es/N0 gamma0 (dB)"
-        if str(config.data["run"]["link_mode"]).startswith("fixed_radius_")
+        "Reference Es/N0 (dB)"
+        if mode.startswith("fixed_radius_") or mode == "fixed_cdl_statistics"
         else "Normalized Es/N0 (dB)"
     )
     _write_plots(output, bler_rows, nmse_rows, title_prefix=experiment_id, x_label=x_label)
@@ -476,12 +481,22 @@ def run_fixed_curve_simulation(
         "snr_stream_indices": {str(snr): index for snr, index in snr_stream_indices.items()},
         "fixed_drops_per_snr": drops_per_snr,
         "stopping": dict(monte),
-        "normalization": dict(config.data["link_normalization"]),
+        "normalization": dict(config.data.get("link_normalization", {})),
         "versions": {
             "python": environment["python"]["version"],
             **{name: details["version"] for name, details in environment["packages"].items()},
         },
     }
+    if isinstance(channel, FixedCDLChannel):
+        metadata["fixed_cdl_statistics"] = {
+            "selected_ssb": channel.selected_ssb,
+            "ssb_long_term_powers": channel.ssb_long_term_powers.tolist(),
+            "reference_receive_power": channel.reference_receive_power,
+            "angle_statistics": channel.angle_statistics,
+            "covariance_realizations": int(config.data["fixed_cdl_statistics"]["covariance_realizations"]),
+            "statistics_seed": int(config.data["fixed_cdl_statistics"]["statistics_seed"]),
+            "realization_seed": int(config.data["fixed_cdl_statistics"]["realization_seed"]),
+        }
     _atomic_json(final_metadata, metadata)
     with (output / "run.log").open("a", encoding="utf-8") as stream:
         stream.write(f"fixed curve run completed: {metadata['completed_utc']}\n")
@@ -550,7 +565,11 @@ def run_adaptive_simulation(
             "points": {},
         }
         _atomic_json(checkpoint, state)
-    channel = UMaChannel(config)
+    channel = (
+        FixedCDLChannel(config, ssb)
+        if config.data["run"]["link_mode"] == "fixed_cdl_statistics"
+        else UMaChannel(config)
+    )
     print(
         f"Plan 001 adaptive run: {len(estimated_ids)} estimated-CSI curves + "
         f"{len(perfect_ids)} Perfect-CSI diagnostics; target={target_errors} errors, "
@@ -679,12 +698,22 @@ def run_adaptive_simulation(
         "perfect_csi_schemes": [str(spec["scheme"]) for spec in perfect_specs],
         "actual_snr_db": sorted(float(value) for value in state["points"]),
         "stopping": dict(monte),
-        "normalization": dict(config.data["link_normalization"]),
+        "normalization": dict(config.data.get("link_normalization", {})),
         "versions": {
             "python": environment["python"]["version"],
             **{name: details["version"] for name, details in environment["packages"].items()},
         },
     }
+    if isinstance(channel, FixedCDLChannel):
+        metadata["fixed_cdl_statistics"] = {
+            "selected_ssb": channel.selected_ssb,
+            "ssb_long_term_powers": channel.ssb_long_term_powers.tolist(),
+            "reference_receive_power": channel.reference_receive_power,
+            "angle_statistics": channel.angle_statistics,
+            "covariance_realizations": int(config.data["fixed_cdl_statistics"]["covariance_realizations"]),
+            "statistics_seed": int(config.data["fixed_cdl_statistics"]["statistics_seed"]),
+            "realization_seed": int(config.data["fixed_cdl_statistics"]["realization_seed"]),
+        }
     _atomic_json(final_metadata, metadata)
     checkpoint.unlink(missing_ok=True)
     print(f"Plan 001 adaptive run complete: {output}", flush=True)

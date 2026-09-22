@@ -1,0 +1,11 @@
+curve_id,target_bler,snr_db,bracket_low_snr_db,bracket_high_snr_db,method
+B-SSB,0.1,-16.234082983053185,-16.5,-16.0,log10_bler_linear_interpolation_on_monotone_fit
+B-SSB,0.01,,,,not_estimated_target_not_bracketed
+P2-SSB,0.1,-16.160716905196953,-16.5,-16.0,log10_bler_linear_interpolation_on_monotone_fit
+P2-SSB,0.01,,,,not_estimated_target_not_bracketed
+P6-SSB,0.1,-16.047694982274677,-16.5,-16.0,log10_bler_linear_interpolation_on_monotone_fit
+P6-SSB,0.01,,,,not_estimated_target_not_bracketed
+BC-SSB,0.1,-16.23883836979955,-16.5,-16.0,log10_bler_linear_interpolation_on_monotone_fit
+BC-SSB,0.01,,,,not_estimated_target_not_bracketed
+CDD-SSB,0.1,-17.398835401317516,-17.5,-17.0,log10_bler_linear_interpolation_on_monotone_fit
+CDD-SSB,0.01,-6.441106827127429,-6.5,-6.0,log10_bler_linear_interpolation_on_monotone_fit

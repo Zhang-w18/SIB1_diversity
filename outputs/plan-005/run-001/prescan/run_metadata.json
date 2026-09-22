@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-09-21T15:40:03.664788+00:00",
+  "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005-prescan.yaml",
+  "config_sha256": "ab47c5a69f1a6a22544b8d59f931768fd31e1b24bf7f30e19bf871e532b15b73",
+  "codebook_sha256": "3142396469049e843e8018bc5596152aa70d53e46d18b406879b52cf54638259",
+  "master_seed": 20260921,
+  "link_mode": "fixed_cdl_statistics",
+  "phase": null,
+  "estimated_csi_curves": [
+    {
+      "id": "B-SSB",
+      "scheme": "baseline",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2,
+      "prg_size_prbs": 2
+    },
+    {
+      "id": "P2-SSB",
+      "label": "pol_cycling_prg2",
+      "scheme": "pol_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2,
+      "prg_size_prbs": 2
+    },
+    {
+      "id": "P6-SSB",
+      "label": "pol_cycling_prg6",
+      "scheme": "pol_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2,
+      "prg_size_prbs": 6
+    },
+    {
+      "id": "BC-SSB",
+      "scheme": "beam_cycling",
+      "covariance": "ssb_pdp",
+      "window_prbs": 2,
+      "prg_size_prbs": 2
+    },
+    {
+      "id": "CDD-SSB",
+      "scheme": "beam_cdd",
+      "covariance": "cdd_ssb_pdp",
+      "window_prbs": 48,
+      "prg_size_prbs": 2
+    }
+  ],
+  "perfect_csi_curves": [],
+  "actual_snr_db": [
+    -8.0,
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0
+  ],
+  "snr_stream_indices": {
+    "-8.0": 0,
+    "-6.0": 4,
+    "-4.0": 8,
+    "-2.0": 12,
+    "0.0": 16,
+    "2.0": 20,
+    "4.0": 24
+  },
+  "fixed_drops_per_snr": 100,
+  "stopping": {
+    "snr_strategy": "fixed_common_drops",
+    "snr_points_db": [
+      -8,
+      -6,
+      -4,
+      -2,
+      0,
+      2,
+      4
+    ],
+    "fixed_drops_per_snr": 100,
+    "target_block_errors_diagnostic": 20,
+    "snr_stream_grid_origin_db": -8.0,
+    "snr_stream_grid_step_db": 0.5,
+    "drop_index_start": 0,
+    "progress_interval_drops": 10,
+    "confidence_level": 0.95,
+    "confidence_interval": "wilson",
+    "stopping_rule": "exactly_100_common_drops_per_snr_no_early_stop",
+    "purpose": "bracket_each_curve_around_10pct_bler_before_full_run"
+  },
+  "normalization": {},
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "1.26.4",
+    "PyYAML": "6.0",
+    "tensorflow": "2.15.1",
+    "sionna": "1.0.2"
+  },
+  "fixed_cdl_statistics": {
+    "selected_ssb": 4,
+    "ssb_long_term_powers": [
+      6.832064500674883,
+      6.901294565270052,
+      34.295988225222956,
+      111.43752005181754,
+      443.92625966258925,
+      97.01163276336045,
+      22.809602606344466,
+      12.438937599070147
+    ],
+    "reference_receive_power": 443.92625966258925,
+    "angle_statistics": {
+      "aod": {
+        "original_mean_deg": 19.68078185076492,
+        "original_rms_spread_deg": 39.2151854244824,
+        "applied_scale": 0.25500325681889824,
+        "transformed_mean_deg": 6.2500000000000115,
+        "transformed_rms_spread_deg": 9.999999999999998,
+        "sionna_internal_transformed_mean_deg": -6.2500000000000115
+      },
+      "aoa": {
+        "original_mean_deg": 149.89433567010747,
+        "original_rms_spread_deg": 70.99211715375259,
+        "applied_scale": 1.0,
+        "transformed_mean_deg": 149.89433567010747,
+        "transformed_rms_spread_deg": 70.99211715375259,
+        "sionna_internal_transformed_mean_deg": 149.89433567010747
+      },
+      "zod": {
+        "original_mean_deg": 99.33124190192831,
+        "original_rms_spread_deg": 4.0666465232963604,
+        "applied_scale": 1.0,
+        "transformed_mean_deg": 104.4733873545822,
+        "transformed_rms_spread_deg": 4.0666465232963604,
+        "sionna_internal_transformed_mean_deg": 104.4733873545822
+      },
+      "zoa": {
+        "original_mean_deg": 73.51176538938736,
+        "original_rms_spread_deg": 10.42450280017142,
+        "applied_scale": 1.0,
+        "transformed_mean_deg": 73.51176538938736,
+        "transformed_rms_spread_deg": 10.42450280017142,
+        "sionna_internal_transformed_mean_deg": 73.51176538938736
+      }
+    },
+    "covariance_realizations": 1000,
+    "statistics_seed": 20261001,
+    "realization_seed": 20262001
+  }
+}

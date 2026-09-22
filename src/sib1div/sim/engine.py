@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 
 from sib1div.analysis import wilson_interval
-from sib1div.channel import UMaChannel, UMaDrop
+from sib1div.channel import FixedCDLChannel, UMaChannel, UMaDrop
 from sib1div.config import SimulationConfig
 from sib1div.nr import SIB1Codec, map_pdsch, qpsk_llr, qpsk_modulate
 from sib1div.receiver import (
@@ -90,6 +90,11 @@ def link_mode_scaling(
     link_mode = str(config.data["run"]["link_mode"])
     if not np.isfinite(large_scale_power_gain) or large_scale_power_gain <= 0.0:
         raise ValueError("large-scale power gain Gd must be finite and positive")
+    if link_mode == "fixed_cdl_statistics":
+        reference_power = float(selected_ssb_power)
+        if not np.isfinite(reference_power) or reference_power <= 0.0:
+            raise ValueError("fixed CDL reference receive power must be finite and positive")
+        return 1.0, reference_power * 10.0 ** (-snr_db / 10.0)
     if link_mode in {"fixed_radius_ls_normalized", "fixed_radius_full_channel"}:
         reference_gain = float(
             config.data["link_normalization"]["reference_large_scale_power_gain_linear"]
@@ -263,17 +268,27 @@ def simulate_one_drop(
     grid = map_pdsch(config, qpsk_modulate(coded))
     spacing = float(config.data["nr"]["subcarrier_spacing_hz"])
     response = drop.frequency_response(config.active_subcarriers, spacing)
+    selection_response = response if response.ndim == 3 else response.reshape(
+        -1, response.shape[-2], response.shape[-1]
+    )
     # P_b is used only for SSB selection and diagnostics in the v4 section 2.8
     # modes. Because their large-scale scaling is common to all beams, the
     # selected index is identical before and after that scaling.
-    selected, ssb_powers = select_ssb(response, ssb_weights)
+    instantaneous_selected, ssb_powers = select_ssb(selection_response, ssb_weights)
+    selected = instantaneous_selected if drop.fixed_selected_ssb is None else int(drop.fixed_selected_ssb)
     selected_power_before = float(ssb_powers[selected])
     large_scale_power_gain = float(drop.large_scale_power_gain)
     channel_power_scale, noise_variance = link_mode_scaling(
-        config, large_scale_power_gain, selected_power_before, snr_db,
+        config, large_scale_power_gain,
+        (selected_power_before if drop.reference_receive_power is None else drop.reference_receive_power),
+        snr_db,
     )
     response = response * np.sqrt(channel_power_scale)
-    selected_after, scaled_ssb_powers = select_ssb(response, ssb_weights)
+    scaled_selection = response if response.ndim == 3 else response.reshape(
+        -1, response.shape[-2], response.shape[-1]
+    )
+    selected_after_instantaneous, scaled_ssb_powers = select_ssb(scaled_selection, ssb_weights)
+    selected_after = selected_after_instantaneous if drop.fixed_selected_ssb is None else selected
     if selected_after != selected:
         raise RuntimeError("common scalar link-mode scaling changed selected SSB")
     selected_power_after = float(scaled_ssb_powers[selected])
@@ -303,12 +318,21 @@ def simulate_one_drop(
             prg_size_prbs=prg_size_prbs,
         )
         assert_unit_norm(precoder)
-        true_h = np.einsum("rkt,tk->rk", response, precoder.weights, optimize=True)
-        received = grid.symbols[:, :, None] * true_h.T[None, :, :] + noise
+        if response.ndim == 3:
+            true_h = np.einsum("rkt,tk->rk", response, precoder.weights, optimize=True)
+            true_h_grid = np.broadcast_to(true_h.T[None, :, :], noise.shape)
+        else:
+            sampled = response
+            if sampled.shape[0] != grid.symbols.shape[0]:
+                indices = np.rint(np.linspace(0, sampled.shape[0] - 1, grid.symbols.shape[0])).astype(int)
+                sampled = sampled[indices]
+            true_h_grid = np.einsum("nrkt,tk->nkr", sampled, precoder.weights, optimize=True)
+            true_h = np.mean(true_h_grid, axis=0).T
+        received = grid.symbols[:, :, None] * true_h_grid + noise
         pilot_estimates, pilot_k = ls_at_pilots(received, grid.symbols, grid.dmrs_mask)
         if configured_curves:
             estimates_to_run = [
-                (str(spec["id"]), "perfect", true_h)
+                (str(spec["id"]), "perfect", true_h_grid)
                 for spec in specs["perfect"]
             ]
             for spec in specs["estimated"]:
@@ -328,10 +352,10 @@ def simulate_one_drop(
                 ])
                 estimates_to_run.append((str(spec["id"]), f"lmmse_{prior}", estimated_h))
         elif estimator in {"perfect", "ls"}:
-            estimates_to_run = [(estimator, true_h if estimator == "perfect" else
+            estimates_to_run = [(estimator, true_h_grid if estimator == "perfect" else
                 linear_ls_interpolate(pilot_estimates, pilot_k, config.active_subcarriers))]
         else:
-            estimates_to_run = [("perfect", true_h)] if estimator == "plan001" else []
+            estimates_to_run = [("perfect", true_h_grid)] if estimator == "plan001" else []
             for prior in _lmmse_priors(scheme, estimator):
                 covariances = _prior_covariances(
                     config, drop, selected, ssb_weights, secondary_weights,
@@ -355,13 +379,19 @@ def simulate_one_drop(
             else:
                 estimator_name, estimated_h = estimate
                 curve_id = None
-            estimates = estimated_h[:, data_k].T
+            if estimated_h.ndim == 3:
+                estimates = estimated_h[data_l, data_k, :]
+            else:
+                estimates = estimated_h[:, data_k].T
             equalized, effective_variance = mrc_equalize(observations, estimates, noise_variance)
             decoded = codec.decode(qpsk_llr(equalized, effective_variance))
             bit_errors = int(np.count_nonzero(decoded.payload != samples.transport_block))
             results.append(LinkResult(
                 scheme, estimator_name, decoded.crc_ok, bit_errors,
-                nmse(estimated_h, true_h), selected, selected_power_before,
+                nmse(
+                    estimated_h if estimated_h.ndim == 3 else np.broadcast_to(estimated_h.T[None, :, :], true_h_grid.shape),
+                    true_h_grid,
+                ), selected, selected_power_before,
                 selected_power_after, large_scale_power_gain,
                 channel_power_scale, noise_variance,
                 curve_id,
@@ -381,7 +411,11 @@ def run_simulation(
     output.mkdir(parents=True, exist_ok=True)
     expected_hash = config.data["codebooks"].get("weights_sha256")
     ssb, secondary = load_codebooks(codebook_path, expected_hash)
-    channel = UMaChannel(config)
+    channel = (
+        FixedCDLChannel(config, ssb)
+        if config.data["run"]["link_mode"] == "fixed_cdl_statistics"
+        else UMaChannel(config)
+    )
     rows = []
     cdd_rows = []
     for snr_index, snr_db in enumerate(snr_values):

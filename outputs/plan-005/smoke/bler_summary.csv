@@ -1,0 +1,5 @@
+snr_db,scheme,estimator,block_errors,blocks,bler,wilson_low,wilson_high,mean_nmse
+-2.0,baseline,perfect,0,1,0.0,0.0,0.7934506856227626,0.0
+-2.0,pol_cycling,perfect,0,1,0.0,0.0,0.7934506856227626,0.0
+-2.0,beam_cycling,perfect,0,1,0.0,0.0,0.7934506856227626,0.0
+-2.0,beam_cdd,perfect,0,1,0.0,0.0,0.7934506856227626,0.0

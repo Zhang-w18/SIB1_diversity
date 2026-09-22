@@ -16,6 +16,7 @@ from sib1div.analysis.statistics import wilson_interval
 MAIN_CURVES = ("B-SSB", "P2-SSB", "P6-SSB", "BC-SSB", "CDD-SSB")
 TARGETS = (0.1, 0.01)
 SNR_RANGE_DB = (-18.0, -6.0)
+BLER_PLOT_RANGE_DB = (-18.0, -15.0)
 EXPECTED_SNRS = (
     -18.0, -17.5, -17.0, -16.5, -16.0, -15.5, -15.0,
     -14.0, -13.0, -12.0, -11.0, -10.5, -10.0, -9.5, -9.0,
@@ -272,7 +273,7 @@ def _write_plot(path: Path, per_curve: dict[str, list[dict]], thresholds: list[d
     for target, style in ((0.1, "--"), (0.01, ":")):
         ax.axhline(target, color="0.4", ls=style, lw=1)
     ax.set(xlabel="Nominal reference Es/N0 gamma0 (dB)", ylabel="BLER",
-           title="Plan 004 monotone estimated-CSI BLER", xlim=(-18, -6), ylim=(5e-3, 0.25))
+           title="Plan 004 monotone estimated-CSI BLER", xlim=BLER_PLOT_RANGE_DB, ylim=(5e-3, 0.25))
     ax.xaxis.set_minor_locator(MultipleLocator(1.0))
     ax.grid(True, which="both", alpha=0.3)
     ax.legend()
@@ -300,7 +301,7 @@ def _write_raw_plot(path: Path, per_curve: dict[str, list[dict]]) -> None:
         ax.axhline(target, color="0.4", ls=style, lw=1)
     ax.set(xlabel="Nominal reference Es/N0 gamma0 (dB)", ylabel="Raw BLER",
            title="Plan 004 raw estimated-CSI BLER (95% Wilson CI)",
-           xlim=SNR_RANGE_DB, ylim=(5e-3, 0.25))
+           xlim=BLER_PLOT_RANGE_DB, ylim=(5e-3, 0.25))
     ax.set_yscale("log")
     ax.xaxis.set_minor_locator(MultipleLocator(1.0))
     ax.grid(True, which="both", alpha=0.3)

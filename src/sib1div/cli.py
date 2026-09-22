@@ -9,6 +9,7 @@ from .codebook.report import write_codebook_report
 from .config import load_config
 from .runtime import initialize_run
 from .sim import run_adaptive_simulation, run_fixed_curve_simulation, run_simulation
+from .analysis.fixed_cdl_diagnostics import write_fixed_cdl_beam_diagnostics
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -22,6 +23,12 @@ def _parser() -> argparse.ArgumentParser:
     codebook = commands.add_parser("generate-codebook", help="generate codebooks and an audit report")
     codebook.add_argument("config", type=Path)
     codebook.add_argument("--output", type=Path, required=True)
+    diagnose = commands.add_parser(
+        "diagnose-fixed-cdl", help="write long-term SSB and secondary-beam RSRP diagnostics"
+    )
+    diagnose.add_argument("config", type=Path)
+    diagnose.add_argument("--codebook", type=Path, required=True)
+    diagnose.add_argument("--output", type=Path, required=True)
     simulate = commands.add_parser("simulate", help="run a paired four-scheme link simulation")
     simulate.add_argument("config", type=Path)
     simulate.add_argument("--codebook", type=Path, required=True)
@@ -56,6 +63,12 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "generate-codebook":
         report = write_codebook_report(load_config(args.config), args.output)
         print(f"codebooks generated; audit report written to {report}")
+        return 0
+    if args.command == "diagnose-fixed-cdl":
+        result = write_fixed_cdl_beam_diagnostics(
+            load_config(args.config), args.codebook, args.output,
+        )
+        print(f"fixed-CDL diagnostics written to {result}")
         return 0
     if args.command == "simulate":
         config = load_config(args.config)

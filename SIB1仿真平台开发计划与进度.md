@@ -37,7 +37,7 @@
 | 发射功率 | 每个占用子载波上的预编码向量单位范数 |
 | CDD | OFDM循环移位，不作为真实传播时延；第一轮使用2个secondary beams |
 | 第一轮链路模式 | `normalized_link` |
-| v4第2.8节链路模式 | `fixed_radius_ls_normalized`、`fixed_radius_full_channel`（已实现） |
+| v4第2.8节链路模式 | `fixed_radius_ls_normalized`、`fixed_radius_full_channel`、`fixed_cdl_statistics`（已实现） |
 | 规划中的可选链路模式 | `coverage_link_budget`（尚未实现） |
 
 “占用子载波”指PDSCH分配内的全部频率位置。48 PRB对应576个占用子载波，其中一部分RE承载DMRS，其余可用RE承载数据。协方差可以在576个频率位置上构造，也可以根据实际估计窗口只构造所需的 $\mathbf R_{pp}$ 和 $\mathbf R_{hp}$。
@@ -175,6 +175,7 @@ outputs/             展开配置、CSV、日志、图和必要诊断数组
 | 正式实验文档流程 | 已完成 | 每次正式方案仿真使用同编号的 `research/plan-XXX.md`、`research/result-XXX.md` 和 `configs/experiments/plan-XXX.yaml` |
 | 平台基础功能调通 | 已完成 | UMa长期ray/极化/空间二阶统计、三类CDD协方差、PRG内/全带LMMSE及`simulate`已形成闭环；24项测试通过。75～115 m码本通过联合覆盖/交界/父子审核并冻结；逐drop瞬时selected-SSB归一化已验收。详见 `outputs/platform_acceptance/平台基础功能调试报告.md` |
 | v4第2.8节固定半径双模式 | 已完成 | 已保留Sionna实际施加的$G_d$，实现$G_0/G_d$大尺度幅度归一化、完整信道模式、共同$G_0$噪声标定及匹配的LMMSE协方差缩放；详见 `SIB1仿真平台_v4第2.8节实现说明.md` |
+| v4第2.8.4节固定CDL长期统计模式 | 已完成 | 已实现固定CDL ray/angle/power/XPR统计、独立样本流协方差估计、固定parent SSB、公共$P_{\rm ref}$噪声标定、角度平移/缩放和可选Doppler时间演化；详见 `SIB1仿真平台_v4第2.8节实现说明.md` |
 | 4方案初步BLER结果 | 待研究者执行 | 7条estimated-CSI与4条Perfect-CSI组合、自适应SNR、公共drop联合停止、聚合输出和断点续跑runner已完成；使用 `run_plan001.ps1` 一次性启动 |
 | 4方案正式结果 | 未开始 | 初步结果检查通过后增加样本数 |
 | Plan 004单调主曲线与门限 | 计划中 | 复用Plan 003计数并补齐共同drop 1000–1999；1%区间扩展到1000–5999；输出原始点、单调估计及10%/1%门限 |

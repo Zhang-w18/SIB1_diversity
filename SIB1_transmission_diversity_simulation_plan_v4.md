@@ -681,6 +681,158 @@ $$
 
 由于距离固定，模式 B 不包含 UE 距离分布导致的全小区路径损耗变化；它保留的是半径 $r_0$ 上的 LOS/NLOS 路径损耗差异、阴影衰落、方位相关阵列/波束增益以及小尺度衰落的共同影响。因此该模式回答的是“固定覆盖半径上的联合衰落性能”，不能直接解释为全小区覆盖概率。若要评价全小区覆盖，必须另建包含 UE 距离分布、固定 EIRP、热噪声和接收机噪声系数的 `coverage_link_budget` 实验。
 
+#### 2.8.4 模式 C：固定 CDL 长期统计的小尺度信道模式
+
+模式标识为 `fixed_cdl_statistics`。
+
+模式 A 和模式 B 基于 UMa 系统级信道，每个 drop 都重新生成 UE 方位、LOS/NLOS 状态、delay spread、angle spread、cluster/ray 功率和角度等信道参数。因此，即使固定 UE 距离并消除路径损耗和阴影衰落，不同 drop 之间的长期空间统计仍然不同。BLER 曲线中同时包含了 transmission diversity、小尺度衰落以及不同长期角度功率谱之间的变化。
+
+为了更直接地研究不同传输方案自身的分集机制，引入固定 CDL 长期统计模式。该模式选定一个 3GPP CDL profile，并在一次完整 Monte Carlo 实验中固定其长期信道统计，包括：
+
+* cluster/ray 的平均功率；
+* 路径时延；
+* AOD、AOA、ZOD、ZOA 及对应角度功率谱；
+* XPR 和极化统计；
+* BS/UE 阵列配置及面板姿态；
+* CDL profile 对应的长期空间协方差。
+
+不同 Monte Carlo realization 仅重新生成随机相位等小尺度随机量。因此可将信道抽象表示为：
+
+$$
+\mathbf H_d[k]
+\sim
+\mathcal{H}
+\left(
+\mathbf R_t,
+\mathbf R_r,
+S(\tau),
+\text{angular spectrum}
+\right),
+$$
+
+其中长期统计量在所有 realization 中保持相同，而第 \(d\) 个 realization 的瞬时复信道不同。
+
+该模式回答的问题是：
+
+> 在相同长期传播环境、相同 parent SSB 覆盖和相同平均信道统计下，Pol-cycling、Beam cycling 和 Beam CDD 通过改变频域、极化域和空间域预编码能够获得多少 transmission diversity gain。
+
+##### 固定 parent SSB
+
+对于固定 CDL 长期统计，定义发射侧长期空间协方差：
+
+$$
+\mathbf R_t
+=
+E_{d,k}
+\left[
+\mathbf H_d^H[k]\mathbf H_d[k]
+\right].
+$$
+
+对于第 \(b\) 个候选 SSB 波束 \(\mathbf w_b\)，其长期平均接收功率为：
+
+$$
+\overline P_b
+=
+\mathbf w_b^H
+\mathbf R_t
+\mathbf w_b.
+$$
+
+根据长期统计选择：
+
+$$
+b^\star
+=
+\arg\max_b
+\overline P_b.
+$$
+
+一旦得到 \(b^\star\)，整个 Monte Carlo BLER 仿真均固定使用该 parent SSB，并使用其对应的 secondary-beam codebook。
+
+因此正式 BLER 仿真过程中不再针对每个 instantaneous realization 重新进行 SSB beam sweep。这样可以避免瞬时波束选择增益混入 transmission diversity 的比较。
+
+虽然不同小尺度 realization 下各 SSB 的瞬时 RSRP 会发生变化，实验所使用的 parent SSB 始终对应当前 CDL 长期角度功率谱下平均 RSRP 最大的 SSB。
+
+
+
+##### SNR 定义
+
+为了保证方案间公平比较，首先基于固定 parent SSB 定义长期平均参考接收功率：
+
+$$
+P_{\rm ref}
+=
+E_{d,k}
+\left[
+\left\|
+\mathbf H_d[k]\mathbf w_{b^\star}
+\right\|^2
+\right].
+$$
+
+给定参考 SNR \(\gamma_{\rm ref}\) 后，所有方案共用同一个噪声功率：
+
+$$
+N_0
+=
+\frac{P_{\rm ref}}{\gamma_{\rm ref}}.
+$$
+
+不得根据每个 realization 的瞬时信道功率重新归一化，也不得根据不同传输方案各自的有效信道功率重新定义 SNR。
+
+因此 Baseline、Pol-cycling、Beam cycling 和 Beam CDD 在相同横轴位置具有相同的发射功率和噪声功率。某一方案获得的 BLER 改善来自其分集特性，而不是额外的平均接收功率归一化。
+
+
+##### 长期角度统计的鲁棒性验证
+
+单一 CDL profile 的固定角度功率谱可能与某一组 SSB 或 secondary beams 存在特定匹配关系。为了避免某一固定角度配置导致结论偏置，需要进一步改变 CDL 的长期角度中心或 angular spread。
+
+例如保持 CDL-C 的 delay/power profile 不变，分别设置：
+
+$$
+\mu_{\rm AoD}
+\in
+\{-30^\circ,-15^\circ,0^\circ,15^\circ,30^\circ\}.
+$$
+
+对于每一个 \(\mu_{\rm AoD}\)，均视为一个独立的长期信道配置，并重新执行：
+
+$$
+\text{固定长期角度谱}
+\rightarrow
+\mathbf R_t
+\rightarrow
+b^\star
+\rightarrow
+\text{固定 parent SSB}
+\rightarrow
+\text{Monte Carlo BLER}.
+$$
+
+每个长期角度配置内部只随机小尺度 realization，不随机改变 mean AoD。
+
+最终比较不同 \(\mu_{\rm AoD}\) 下各方案相对于 Baseline 的固定 BLER SNR gain。如果 Beam cycling 或 Beam CDD 在多个长期角度配置下均能获得稳定收益，则可以进一步说明增益来自 transmission diversity 机制，而非某一固定 CDL angular profile 与 secondary-beam codebook 的偶然匹配。
+
+##### 与模式 A、模式 B 的关系
+
+三种模式关注的随机性层级不同：
+
+| 属性                       | 模式 A `fixed_radius_ls_normalized` | 模式 B `fixed_radius_full_channel` | 模式 C `fixed_cdl_statistics`    |
+| ------------------------ | --------------------------------- | -------------------------------- | ------------------------------ |
+| 信道模型                     | UMa                               | UMa                              | CDL                            |
+| UE 距离                    | 固定                                | 固定                               | 不作为随机变量                        |
+| pathloss / shadow fading | 标量幅度消除                            | 保留                               | 固定或不引入系统级随机变化                  |
+| LOS/NLOS                 | 每个 drop 随机                        | 每个 drop 随机                       | 由选定 CDL profile 固定             |
+| delay / power profile    | 每个 drop 随机                        | 每个 drop 随机                       | 固定                             |
+| angle power spectrum     | 每个 drop 随机                        | 每个 drop 随机                       | 固定                             |
+| 长期空间协方差                  | 每个 drop 变化                        | 每个 drop 变化                       | 固定                             |
+| 小尺度随机相位                  | 随机                                | 随机                               | 随机                             |
+| selected SSB             | 每个 drop 根据瞬时信道选择                  | 每个 drop 根据瞬时信道选择                 | 根据长期统计选择一次并固定                  |
+| 主要用途                     | 固定距离下研究 UMa 小尺度与预编码分集             | 固定距离下研究联合大尺度和小尺度衰落               | 隔离研究 transmission diversity 机制 |
+
+因此，模式 C 可作为 transmission diversity 的主要机理验证模式，模式 A 用于验证这些收益在随机 UMa 长期信道统计下是否仍然存在，模式 B 再进一步评估路径损耗和阴影衰落等大尺度幅度变化加入后的实际固定半径性能。
+
 #### 2.8.4 两种模式的属性对比
 
 | 属性 | 模式 A：`fixed_radius_ls_normalized` | 模式 B：`fixed_radius_full_channel` |
@@ -701,7 +853,7 @@ $$
 
 两种模式的 BLER 差异表示固定半径下路径损耗/阴影衰落标量波动带来的附加影响。由于模式 A 仍保留 LOS/NLOS 和其他 large-scale parameters 对信道结构的作用，该差异不能解释为“全部大尺度统计量”的唯一贡献。
 
-#### 2.8.5 公共 SNR 定义
+#### 2.8.6 公共 SNR 定义
 
 两种模式都可以定义 BLER--SNR 曲线。横轴不得使用每个 drop 或每个方案事后计算的实际接收 SNR，否则会重新条件化或抹掉需要研究的大尺度和小尺度波动。
 
@@ -780,13 +932,13 @@ $$
 
 若不需要把两种模式画在同一标称接收 SNR 横轴上，也可以直接使用发射端 $E_s/N_0$ 作为横轴并在模式 B 中保留原始 $\mathbf H_d$。这种定义同样物理正确，但由于实际路径增益很小，横轴 dB 数值通常较大，不便于与常见接收 SNR 曲线比较。
 
-#### 2.8.6 固定参考 $G_0$ 的物理意义
+#### 2.8.7 固定参考 $G_0$ 的物理意义
 
 $G_0$ 不是按仿真结果拟合的修正系数，也不是把每个方案强制到相同接收功率的归一化因子。它是固定半径 $r_0$ 上预先定义的参考传播功率增益，相当于规定 BLER 图横轴的 0 dB 原点。$G_0$ 对所有 drop、LOS/NLOS realization、SSB、传输方案和 SNR 点完全相同，因此不会消除大尺度或小尺度随机性。
 
 若把所有信道和噪声共同换一个固定单位，改变 $G_0$ 只会使所有曲线在横轴上整体平移。为了避免抽象的全实验常数 $C$ 缺少物理解释，本计划不使用由当前 Monte Carlo 样本平均功率得到的 $C$；优先使用由固定半径、明确路径损耗公式和无阴影参考条件定义的 $G_0$。若使用实际 EIRP、热噪声和接收机噪声系数，则可以直接通过链路预算确定 $E_s/N_0$，无需额外引入 $G_0$。
 
-#### 2.8.7 输出与解释要求
+#### 2.8.8 输出与解释要求
 
 两种模式必须分别输出 BLER、95% 置信区间和配对错误计数，不得把两个模式的误块数合并。每个 drop 至少记录或能够重构：
 

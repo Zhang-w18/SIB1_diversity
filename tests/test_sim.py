@@ -58,3 +58,15 @@ def test_v4_section_2_8_link_mode_scaling_uses_g0_not_selected_ssb_power(
     )
     assert scale == pytest.approx(expected_scale)
     assert noise_variance == pytest.approx(1e-11)
+
+
+def test_fixed_cdl_scaling_uses_frozen_parent_ssb_reference_power():
+    data = deepcopy(load_config(CONFIG).data)
+    data["run"]["link_mode"] = "fixed_cdl_statistics"
+    config = SimulationConfig(data, CONFIG)
+    scale, noise_variance = link_mode_scaling(
+        config, large_scale_power_gain=1.0,
+        selected_ssb_power=2.5, snr_db=10.0,
+    )
+    assert scale == 1.0
+    assert noise_variance == pytest.approx(0.25)

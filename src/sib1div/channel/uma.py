@@ -25,11 +25,18 @@ class UMaDrop:
     large_scale_amplitude_gain: float
     large_scale_power_gain: float
     path_spatial_covariances: NDArray[np.complex128]  # [rx,path,txru,txru]
+    fixed_selected_ssb: int | None = None
+    reference_receive_power: float | None = None
+    channel_time_step_s: float = 0.0
 
     def frequency_response(self, n_subcarriers: int, spacing_hz: float) -> NDArray[np.complex128]:
         offsets = (np.arange(n_subcarriers) - 0.5 * (n_subcarriers - 1)) * spacing_hz
         phase = np.exp(-1j * 2 * np.pi * offsets[:, None] * self.path_delays_s[None, :])
-        return np.einsum("rtl,kl->rkt", self.path_coefficients, phase, optimize=True)
+        if self.path_coefficients.ndim == 3:
+            return np.einsum("rtl,kl->rkt", self.path_coefficients, phase, optimize=True)
+        if self.path_coefficients.ndim == 4:
+            return np.einsum("nrtl,kl->nrkt", self.path_coefficients, phase, optimize=True)
+        raise ValueError("path coefficients must have shape [rx,tx,path] or [time,rx,tx,path]")
 
 
 def sample_ue_position(config: SimulationConfig, drop_index: int) -> tuple[NDArray[np.float64], float, float]:

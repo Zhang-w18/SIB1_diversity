@@ -118,11 +118,50 @@ def validate_config(config: SimulationConfig) -> None:
         "coverage_link_budget",
         "fixed_radius_ls_normalized",
         "fixed_radius_full_channel",
+        "fixed_cdl_statistics",
     }
     if link_mode not in supported_link_modes:
         errors.append("run.link_mode is unsupported")
-    if data["scenario"]["model"] != "UMa" or int(data["scenario"]["ue_per_drop"]) != 1:
-        errors.append("the first-round scenario must be UMa with one UE per drop")
+    expected_model = "CDL" if link_mode == "fixed_cdl_statistics" else "UMa"
+    if data["scenario"]["model"] != expected_model or int(data["scenario"]["ue_per_drop"]) != 1:
+        errors.append(f"link mode {link_mode} requires {expected_model} with one UE per drop")
+    if link_mode == "fixed_cdl_statistics":
+        fixed = data.get("fixed_cdl_statistics")
+        if not isinstance(fixed, Mapping):
+            errors.append("fixed_cdl_statistics link mode requires a fixed_cdl_statistics section")
+        else:
+            if str(fixed.get("profile", "")).upper() not in {"A", "B", "C", "D", "E"}:
+                errors.append("fixed CDL profile must be one of A, B, C, D, E")
+            if float(fixed.get("delay_spread_s", 0.0)) <= 0.0:
+                errors.append("fixed CDL delay_spread_s must be positive")
+            if int(fixed.get("covariance_realizations", 0)) < 1:
+                errors.append("fixed CDL covariance_realizations must be positive")
+            if int(fixed.get("statistics_seed", -1)) < 0 or int(fixed.get("realization_seed", -1)) < 0:
+                errors.append("fixed CDL statistics_seed and realization_seed must be non-negative")
+            if fixed.get("statistics_seed") == fixed.get("realization_seed"):
+                errors.append("fixed CDL covariance and BLER streams must use different seeds")
+            steps = int(fixed.get("time_steps_per_slot", 1))
+            if steps not in {1, int(data["nr"]["slot_symbols"])}:
+                errors.append("fixed CDL time_steps_per_slot must be 1 or nr.slot_symbols")
+            if steps > 1 and float(fixed.get("time_step_s", 0.0)) <= 0.0:
+                errors.append("fixed CDL time_step_s must be positive for time evolution")
+            transform = fixed.get("angle_transform", {})
+            if not isinstance(transform, Mapping):
+                errors.append("fixed CDL angle_transform must be a mapping")
+            elif any(float(transform.get(f"{name}_scale", 1.0)) <= 0.0 for name in ("aod", "aoa", "zod", "zoa")):
+                errors.append("fixed CDL angle scales must be positive")
+            else:
+                spread_fields = {
+                    "aod": "target_asd_deg", "aoa": "target_asa_deg",
+                    "zod": "target_zsd_deg", "zoa": "target_zsa_deg",
+                }
+                for angle, spread_field in spread_fields.items():
+                    if spread_field in transform and float(transform[spread_field]) <= 0.0:
+                        errors.append(f"fixed CDL {spread_field} must be positive")
+                    if spread_field in transform and f"{angle}_scale" in transform:
+                        errors.append(
+                            f"fixed CDL {spread_field} and {angle}_scale are mutually exclusive"
+                        )
     if link_mode in {"fixed_radius_ls_normalized", "fixed_radius_full_channel"}:
         radius_min = float(data["scenario"]["ue_distance_min_m"])
         radius_max = float(data["scenario"]["ue_distance_max_m"])

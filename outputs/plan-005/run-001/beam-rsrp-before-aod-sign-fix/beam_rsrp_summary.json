@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005-prescan.yaml",
+  "codebook": "D:\\07 2026\\Simulation\\SIB1_diversity\\outputs\\plan-001\\codebook_7ghz_8h1v_mainlobe\\codebook_weights.npz",
+  "profile": "C",
+  "delay_spread_s": 1e-07,
+  "covariance_realizations": 1000,
+  "statistics_seed": 20261001,
+  "selected_ssb": 3,
+  "selected_ssb_power": 436.86624379906937,
+  "selected_ssb_children": [
+    6,
+    7
+  ],
+  "selected_ssb_children_power": [
+    542.8494505299598,
+    422.7295475584666
+  ],
+  "strongest_secondary": 6,
+  "angle_statistics": {
+    "aod": {
+      "original_mean_deg": -19.68078185076492,
+      "original_rms_spread_deg": 39.2151854244824,
+      "applied_scale": 0.25500325681889824,
+      "transformed_mean_deg": 6.249999999999988,
+      "transformed_rms_spread_deg": 9.999999999999995
+    },
+    "aoa": {
+      "original_mean_deg": 149.89433567010747,
+      "original_rms_spread_deg": 70.99211715375259,
+      "applied_scale": 1.0,
+      "transformed_mean_deg": 149.89433567010747,
+      "transformed_rms_spread_deg": 70.99211715375259
+    },
+    "zod": {
+      "original_mean_deg": 99.33124190192831,
+      "original_rms_spread_deg": 4.0666465232963604,
+      "applied_scale": 1.0,
+      "transformed_mean_deg": 104.4733873545822,
+      "transformed_rms_spread_deg": 4.0666465232963604
+    },
+    "zoa": {
+      "original_mean_deg": 73.51176538938736,
+      "original_rms_spread_deg": 10.42450280017142,
+      "applied_scale": 1.0,
+      "transformed_mean_deg": 73.51176538938736,
+      "transformed_rms_spread_deg": 10.42450280017142
+    }
+  }
+}

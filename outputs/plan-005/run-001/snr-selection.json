@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "target_bler": 0.1,
+  "selection_rule": "union of adjacent 2 dB raw-BLER brackets, filled on 0.5 dB grid, with one 0.5 dB guard point on each side",
+  "curve_brackets_db": {
+    "B-SSB": [
+      -2.0,
+      0.0
+    ],
+    "P2-SSB": [
+      -2.0,
+      0.0
+    ],
+    "P6-SSB": [
+      -2.0,
+      0.0
+    ],
+    "BC-SSB": [
+      -2.0,
+      0.0
+    ],
+    "CDD-SSB": [
+      -2.0,
+      0.0
+    ]
+  },
+  "full_snr_points_db": [
+    -2.5,
+    -2.0,
+    -1.5,
+    -1.0,
+    -0.5,
+    0.0,
+    0.5
+  ],
+  "prescan_csv": "D:\\07 2026\\Simulation\\SIB1_diversity\\outputs\\plan-005\\run-001\\prescan\\bler.csv",
+  "prescan_config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005-prescan.yaml",
+  "full_config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005.yaml"
+}
