@@ -8,6 +8,8 @@
 
 ## 1. 实际运行信息
 
+### 1.1 运行配置与完成状态
+
 | 项目 | 实际值 |
 |---|---|
 | 代码版本/状态 | 基线提交 `a89aa37041473b84d00f5c99f9c54a0ed4c6e690`；运行所用 Plan 005 实现和配置位于未提交工作树中 |
@@ -45,6 +47,127 @@ Beam CDD 实际参数：
 | 对应循环移位时间 | `[0, 57.87037037037037] ns` |
 | 相位 | $v_m[q]=\exp(-j2\pi qj_m/576)$，$q=0,\ldots,575$ |
 | 功率归一化 | DMRS 与数据采用相同预编码；每个活动子载波归一化为单位范数 |
+
+### 1.2 SSB PDP、CDD 人工时延与逐子载波归一化
+
+这里的“逐子载波归一化的 PDP”不是指每个子载波各有一套传统 PDP。代码实际传给 LMMSE 的对象是由 PDP 构造的频域协方差矩阵；CDD-SSB 在普通 SSB PDP 的基础上加入已知人工时延，并把发送端逐子载波预编码归一化产生的确定性缩放纳入该协方差。
+
+#### 1.2.1 普通 SSB PDP
+
+固定 CDL 信道首先用 1000 个长期统计 realization 计算每条路径、每个接收分支的 TXRU 空间协方差
+
+$$
+\mathbf C_{r,\ell}=E\{\mathbf h_{r,\ell}^{H}\mathbf h_{r,\ell}\}.
+$$
+
+然后把它投影到 selected SSB 权重 $\mathbf w_{\rm SSB}$，得到每个接收分支的路径功率：
+
+$$
+P_{r,\ell}^{\rm SSB}
+=
+\mathbf w_{\rm SSB}^{H}\mathbf C_{r,\ell}\mathbf w_{\rm SSB}.
+$$
+
+代码中的 `ssb_pdp` 即路径时延和上述投影功率的集合 $\{(\tau_\ell,P_{r,\ell}^{\rm SSB})\}$。它转换成频域协方差：
+
+$$
+R_r[k,k']
+=
+\sum_\ell P_{r,\ell}^{\rm SSB}
+\exp\{-j2\pi(f_k-f_{k'})\tau_\ell\}.
+$$
+
+B-SSB、P2-SSB、P6-SSB 和 BC-SSB 都使用这份 selected-SSB PDP 先验。尤其是 BC-SSB，尽管实际发送在两个 secondary beam 之间切换，接收机仍使用 parent SSB 投影得到的 PDP，而不是 secondary beam 的实际 PDP。这是本实验有意采用的公共、简化接收机先验。
+
+#### 1.2.2 CDD-SSB 协方差
+
+CDD-SSB 没有直接把普通 SSB PDP 交给 48-PRB LMMSE，而是将两个 CDD 分支的人工时延加入每条物理路径：
+
+$$
+\tau_{\ell,m}^{\rm eff}=\tau_\ell+\delta_m,
+\qquad
+[\delta_0,\delta_1]=[0,57.87037037]\ {\rm ns}.
+$$
+
+在 `cdd_ssb_pdp` 模式下，两个 CDD 分支都复制同一份 parent SSB 路径功率，即 $P_{r,m,\ell}=P_{r,\ell}^{\rm SSB}$。因此它仍然是 SSB PDP 近似，并未使用 secondary #8/#9 各自的实际 PDP。代码中另有 `cdd_per_beam_pdp` 可使用各 secondary beam 的路径功率，但 Plan 005 主曲线没有选择该先验。
+
+在假设两个 CDD 波束分支互不相关的条件下，归一化前的频域协方差为
+
+$$
+\widetilde R_r[k,k']
+=
+\sum_{m=0}^{K-1}\sum_\ell
+\frac{P_{r,\ell}^{\rm SSB}}{K}
+\exp\left\{-j2\pi\left[
+f_k(\tau_\ell+\delta_m)-f_{k'}(\tau_\ell+\delta_m)
+\right]\right\}.
+$$
+
+其中 $1/K$ 来自每个 CDD 分支的 $1/\sqrt K$ 幅度。`cdd_ssb_pdp` 忽略两个 secondary beam 的交叉协方差项；代码中的 `ideal_covariance` 才会保留这些跨波束相关项。
+
+#### 1.2.3 逐子载波归一化如何进入协方差
+
+CDD 发射端先形成未归一化的频域预编码：
+
+$$
+\widetilde{\mathbf w}[q]
+=
+\frac{1}{\sqrt K}\sum_{m=0}^{K-1}
+\mathbf b_m\exp(-j2\pi qj_m/576),
+\qquad q=0,\ldots,575,
+$$
+
+其中 $\mathbf b_m$ 是 secondary #8/#9 的波束权重，$[j_0,j_1]=[0,1]$。由于这两个波束不严格正交，叠加后的原始功率
+
+$$
+\rho[q]=\|\widetilde{\mathbf w}[q]\|^2
+$$
+
+会随子载波变化。发送端因此执行
+
+$$
+\mathbf w[q]
+=
+\frac{\widetilde{\mathbf w}[q]}{\sqrt{\rho[q]}},
+$$
+
+使每个活动子载波上的预编码范数均为 1。为了使 LMMSE 先验与实际发送信道一致，CDD 频域协方差也乘入相同的已知缩放：
+
+$$
+R_r^{\rm CDD}[k,k']
+=
+\frac{\widetilde R_r[k,k']}{\sqrt{\rho[k]\rho[k']}}.
+$$
+
+因此，更准确的描述是“由 SSB PDP 加上已知 CDD 人工时延，并包含实际逐子载波预编码归一化因子的频域协方差”，而不是“逐子载波各自独立的 PDP”。
+
+#### 1.2.4 LMMSE 的实际使用方式
+
+设 DMRS 子载波集合为 $p$，完整频域协方差为 $\mathbf R$，则实现使用
+
+$$
+\widehat{\mathbf h}
+=
+\mathbf R_{:,p}
+\left(
+\mathbf R_{p,p}+\frac{\sigma_n^2}{N_{\rm DMRS}}\mathbf I
+\right)^{\dagger}
+\widehat{\mathbf h}_{\rm LS,p}.
+$$
+
+普通四条曲线每 2 PRB、即 24 个子载波独立执行一次 LMMSE，避免跨越预编码边界；CDD-SSB 则利用含人工时延和归一化信息的协方差，在全部 48 PRB、即 576 个子载波上联合执行。
+
+| 项目 | `ssb_pdp` | `cdd_ssb_pdp` |
+|---|---|---|
+| 基础路径功率 | selected SSB 投影功率 | 同一 selected SSB 投影功率 |
+| 有效路径时延 | $\tau_\ell$ | $\tau_\ell+\delta_m$ |
+| CDD 分支 | 无 | 2 个，每分支功率含 $1/K$ |
+| secondary beam 实际 PDP | 不使用 | 不使用 |
+| 跨波束相关项 | 不适用 | 忽略，假定两个分支互不相关 |
+| 子载波归一化 | 无额外 CDD 处理 | 协方差除以 $\sqrt{\rho[k]\rho[k']}$ |
+| LMMSE 窗口 | 2 PRB / 24 子载波 | 48 PRB / 576 子载波 |
+
+这一实现差异意味着：Plan 005 中 CDD-SSB 的 NMSE 和 BLER 收益是“CDD 预编码、已知人工时延、逐子载波归一化感知以及 48-PRB 匹配 LMMSE”的整体收益，不能全部解释为发射 CDD 本身的收益。对应实现位于 `src/sib1div/channel/cdl.py` 的长期路径协方差构造、`src/sib1div/receiver/estimation.py` 的 `frequency_covariance()` 和 `independent_cdd_frequency_covariance()`、`src/sib1div/schemes/precoding.py` 的 `build_precoder()`，以及 `src/sib1div/sim/engine.py` 的 `_prior_covariances()`。
 
 ## 2. BLER 结果
 
