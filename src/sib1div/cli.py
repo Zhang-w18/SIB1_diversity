@@ -10,6 +10,7 @@ from .config import load_config
 from .runtime import initialize_run
 from .sim import run_adaptive_simulation, run_fixed_curve_simulation, run_simulation
 from .analysis.fixed_cdl_diagnostics import write_fixed_cdl_beam_diagnostics
+from .analysis.rsrp_cdf import write_rsrp_cdfs
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -29,6 +30,14 @@ def _parser() -> argparse.ArgumentParser:
     diagnose.add_argument("config", type=Path)
     diagnose.add_argument("--codebook", type=Path, required=True)
     diagnose.add_argument("--output", type=Path, required=True)
+    rsrp = commands.add_parser(
+        "fixed-cdl-rsrp-cdf", help="write per-Rx effective-port RSRP distributions"
+    )
+    rsrp.add_argument("config", type=Path)
+    rsrp.add_argument("--codebook", type=Path, required=True)
+    rsrp.add_argument("--output", type=Path, required=True)
+    rsrp.add_argument("--drop-start", type=int, default=2000)
+    rsrp.add_argument("--drops", type=int, default=10000)
     simulate = commands.add_parser("simulate", help="run a paired four-scheme link simulation")
     simulate.add_argument("config", type=Path)
     simulate.add_argument("--codebook", type=Path, required=True)
@@ -69,6 +78,13 @@ def main(argv: list[str] | None = None) -> int:
             load_config(args.config), args.codebook, args.output,
         )
         print(f"fixed-CDL diagnostics written to {result}")
+        return 0
+    if args.command == "fixed-cdl-rsrp-cdf":
+        result = write_rsrp_cdfs(
+            load_config(args.config), args.codebook, args.output,
+            drop_start=args.drop_start, drops=args.drops,
+        )
+        print(f"fixed-CDL RSRP CDF written to {result}")
         return 0
     if args.command == "simulate":
         config = load_config(args.config)

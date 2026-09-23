@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "target_bler": 0.01,
+  "drop_rule": "ceil_1000(clamp(100/min_curve_Jeffreys_BLER, 2000, 20000))",
+  "curve_brackets_db": {
+    "B-SSB": [
+      2.0,
+      2.5
+    ],
+    "P2-SSB": [
+      1.0,
+      1.5
+    ],
+    "P6-SSB": [
+      1.0,
+      1.5
+    ],
+    "BC-SSB": [
+      2.0,
+      2.5
+    ],
+    "CDD-SSB": [
+      2.0,
+      2.5
+    ]
+  },
+  "formal_snr_points_db": [
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "points": [
+    {
+      "snr_db": 0.5,
+      "target_total_drops": 4000,
+      "existing_formal_drops": 1000,
+      "additional_drops": 3000,
+      "drop_index_start": 2000,
+      "drop_index_end": 4999,
+      "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005-tail-generated\\plan-005-tail-p0p5.yaml",
+      "config_sha256": "1ace0896273f44d4b2fd4bb213a4a6a54da65ba10b04650461c6d48ad9a8652f"
+    },
+    {
+      "snr_db": 1.0,
+      "target_total_drops": 5000,
+      "existing_formal_drops": 0,
+      "additional_drops": 5000,
+      "drop_index_start": 2000,
+      "drop_index_end": 6999,
+      "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005-tail-generated\\plan-005-tail-p1p0.yaml",
+      "config_sha256": "42a65b12c7ce7e2f00263e9acbd6fd0e5c2457b0fee7d1f7d27a1aacb33bdd7d"
+    },
+    {
+      "snr_db": 1.5,
+      "target_total_drops": 20000,
+      "existing_formal_drops": 0,
+      "additional_drops": 20000,
+      "drop_index_start": 2000,
+      "drop_index_end": 21999,
+      "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005-tail-generated\\plan-005-tail-p1p5.yaml",
+      "config_sha256": "16813be3d4d058aed21ae3607b734618b2dc83657bb68ed41e826d33555e2fb0"
+    },
+    {
+      "snr_db": 2.0,
+      "target_total_drops": 7000,
+      "existing_formal_drops": 0,
+      "additional_drops": 7000,
+      "drop_index_start": 2000,
+      "drop_index_end": 8999,
+      "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005-tail-generated\\plan-005-tail-p2p0.yaml",
+      "config_sha256": "5adcd44ff546061a0a124fec89ab715059409bd9b8c833c07bcfc0f84ef4f25b"
+    },
+    {
+      "snr_db": 2.5,
+      "target_total_drops": 20000,
+      "existing_formal_drops": 0,
+      "additional_drops": 20000,
+      "drop_index_start": 2000,
+      "drop_index_end": 21999,
+      "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005-tail-generated\\plan-005-tail-p2p5.yaml",
+      "config_sha256": "23e9444dd68f76ebb2157939f1b1b3d81b5dc785126f4961a531cde1412408e3"
+    },
+    {
+      "snr_db": 3.0,
+      "target_total_drops": 20000,
+      "existing_formal_drops": 0,
+      "additional_drops": 20000,
+      "drop_index_start": 2000,
+      "drop_index_end": 21999,
+      "config": "D:\\07 2026\\Simulation\\SIB1_diversity\\configs\\experiments\\plan-005-tail-generated\\plan-005-tail-p3p0.yaml",
+      "config_sha256": "ae6deccfbbadecf70b23f895a447915a9614705e8afdce132d6e7fdb85675b72"
+    }
+  ],
+  "prescan_csv": "D:\\07 2026\\Simulation\\SIB1_diversity\\outputs\\plan-005\\run-002\\prescan-1pct-fast\\bler.csv",
+  "coarse_prescan_csv": "D:\\07 2026\\Simulation\\SIB1_diversity\\outputs\\plan-005\\run-001\\prescan\\bler.csv",
+  "existing_csv": "D:\\07 2026\\Simulation\\SIB1_diversity\\outputs\\plan-005\\run-001\\full\\bler.csv"
+}

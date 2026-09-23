@@ -1,6 +1,6 @@
-# Plan 005：固定统计 CDL-C、100 ns、10° ASD 四方案 10% BLER 比较
+# Plan 005：固定统计 CDL-C、100 ns、10° ASD 五曲线 BLER 与接收分支 RSRP 比较
 
-状态：已完成
+状态：计划中（run-001 已完成；1% BLER 与 RSRP CDF 补充实验待运行）
 
 创建日期：2026-09-21
 
@@ -128,3 +128,65 @@ py -3.11 -m sib1div.cli validate-config configs/experiments/plan-005-prescan.yam
 - 展开配置、环境版本、种子、运行日志和 `run_metadata.json`；
 - selected SSB、全部 SSB 长期功率、$P_{ref}$、角度变换前后统计；
 - CDD循环移位及逐子载波预编码归一化检查。
+
+## 6. 2026-09-22 补充实验：1% BLER 尾部与逐接收天线 RSRP CDF
+
+### 6.1 目的与不变项
+
+本次追加 trial 回答两个问题：第一，扩展 SNR 范围，使 B-SSB、P2-SSB、P6-SSB、BC-SSB 和 CDD-SSB 五条曲线都以原始仿真点跨过 1% BLER；第二，比较五种预编码在每根 UE 接收天线上的瞬时等效端口 RSRP 分布。第 2 节冻结的信道、阵列、码本、五条曲线、CDD、接收机、功率归一化、主种子和随机流映射全部不变。run-001 的原始结果和配置不改写，新增数据以追加 trial 保存，并在 `result-005.md` 中记录和合并。
+
+这属于相同系统配置下增加 SNR 点、drop 和诊断量，不用新的 plan 编号。原预扫描 drop 0–99、原正式仿真 drop 1000–1999 保留；补充预扫描使用 100–599，补充正式 BLER 从 2000 开始，因此不与已执行区间重叠。
+
+### 6.2 1% BLER 预扫描与 SNR 网格选择
+
+补充预扫描首先运行 SNR `[0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0]` dB，每点 500 个公共 drop，绝对 drop 区间 100–599。0.5 dB 虽已有正式结果，仍在预扫描中保留，作为新旧区间的一致性检查；预扫描计数不并入正式结果。
+
+2026-09-22 首次补充预扫描在完成 0.5 dB 的 30 个 drop 后由用户停止，未形成可用 prescan 点，其 checkpoint 原样保留但不并入任何统计。考虑到 run-001 已在同一模式 C、相同物理配置和随机流 namespace 下完成 0/2/4 dB、每点 100 drops 的粗扫，后续改用快速补扫：新增 `[1.0,1.5,2.5,3.0,3.5,4.5]` dB，每点 100 个公共 drop，使用绝对 drop 600–699。选点时合并 run-001 的 0/2/4 dB 粗扫、run-001 的 −2.5～0.5 dB 正式结果和本次快速补扫；同一 SNR 若有重复数据，以本次快速补扫为设计依据，但预扫描计数仍不并入正式 BLER。
+
+对每条曲线寻找原始 BLER 跨越 0.01 的相邻 0.5 dB 点。若任一曲线在 4.0 dB 仍未低于 0.01，则以 0.5 dB 步长向高 SNR 追加预扫描，沿用绝对 drop 100–599；若某曲线在 0.5 dB 已低于 0.01，则用 run-001 中 0.0/0.5 dB 的正式结果提供低 SNR 一侧。只有五条曲线都得到 1% 括区后，才生成正式追加配置。
+
+正式 SNR 集合取五条曲线 1% 括区的并集，在 0.5 dB 网格上填满，并在并集两端各加一个 0.5 dB guard 点。为保持从 10% 到 1% 的整条曲线连续，最终合图还必须包含 run-001 的 −2.5～0.5 dB 原始点；不得把预扫描计数与正式计数混合。
+
+### 6.3 每个 SNR 点的自适应正式 drop 数
+
+正式 drop 数按 SNR 点分别冻结，但同一 SNR 的五条曲线必须使用相同 drop 数和相同 TB、信道、噪声样本。设补充预扫描在该点对曲线 $s$ 得到 $e_s$ 个错误、$n=500$ 个 block，采用 Jeffreys 平滑估计
+
+$$
+\widetilde p_s=\frac{e_s+0.5}{n+1}.
+$$
+
+该 SNR 的设计 BLER 取五条曲线中的最小值 $p_{design}=\min_s\widetilde p_s$，使最强方案也有足够尾部统计；正式总 drop 数冻结为
+
+$$
+N_{total}=1000\left\lceil\frac{\min\left(20000,\max\left(2000,100/p_{design}\right)\right)}{1000}\right\rceil.
+$$
+
+因此每点最少 2000、最多 20000 个正式公共 drop，目标是让预期最强曲线约有 100 个错误；上限处允许少于 100 个错误，但必须如实报告置信区间。对于 run-001 已运行的 −2.5～0.5 dB 点，只追加 `N_total-1000` 个 drop，新增绝对 drop 从 2000 起；新增 SNR 点运行 `N_total` 个 drop，同样从 2000 起。不同 SNR 由冻结的 stream index 区分；所有追加配置必须记录该点的 SNR、`N_total`、新增 drop 数和绝对 drop 区间。合并时按 `curve_id + snr_db` 求和 errors/blocks/NMSE 累积量并重算 Wilson 区间，禁止平均 BLER 百分比。
+
+曲线平滑性的最低验收条件为：五条曲线都在正式点上有 BLER 大于和小于 0.01 的相邻点；1% 附近每个非封顶点的最强曲线至少 80 个实测错误；各曲线随 SNR 的局部非单调变化必须同时检查 Wilson 区间，不能为美化曲线而替换原始计数。主图使用原始点连线和 95% Wilson 区间，可另给出仅用于观察趋势的单调拟合，但门限仍按相邻原始点的 $\log_{10}(BLER)$ 插值。
+
+### 6.4 每根接收天线的 RSRP 分布
+
+RSRP 统计使用 10000 个固定 CDL realization，绝对 drop 2000–11999；不生成 TB、不加噪声、不做信道估计或 MRC。对曲线 $s$、接收天线 $r$ 和 realization $i$，先应用与 BLER 完全相同的预编码（包括 P2/P6 的 PRG 图案、BC 的 beam cycling、CDD 相位和逐子载波归一化），得到 576 个活动子载波上的等效端口信道 $h^{(s)}_{i,r}[k]$，定义
+
+$$
+P^{(s)}_{i,r}=\frac{1}{576}\sum_{k=0}^{575}\left|h^{(s)}_{i,r}[k]\right|^2,
+\qquad
+P^{(s)}_{i,r,\mathrm{dBref}}=10\log_{10}\frac{P^{(s)}_{i,r}}{P_{ref}}.
+$$
+
+其中 $P_{ref}$ 是第 2.1 节定义的 selected SSB 四接收分支合计长期平均功率标尺；同时保存未归一化线性功率，避免 dB 标尺歧义。这里的“每根接收天线”指 UE 的 4 个物理 Rx 分支，不做跨天线求和。P2-SSB 和 P6-SSB 分别作为两条曲线，因此每个 Rx 图包含 B-SSB、P2-SSB、P6-SSB、BC-SSB、CDD-SSB 五条经验 CDF；共输出 4 张图。CDF 使用全部有限样本按升序排列，纵坐标采用 $(j-0.5)/N$，不抽样、不平滑。
+
+输出至少包括 `rsrp_per_rx.csv`（字段含 drop index、Rx index、curve id、线性功率和 dBref）、`rsrp_summary.csv`（均值、标准差及 1/5/10/50/90/95/99 百分位）、`rsrp_cdf_rx0.png` 至 `rsrp_cdf_rx3.png`、展开配置和运行元数据。五条方案必须复用同一批 10000 个信道 realization。
+
+### 6.5 补充实验执行顺序与目录
+
+1. 验证补充预扫描配置并执行 prescan；输出到 `outputs/plan-005/run-002/prescan-1pct/`。
+2. 根据 prescan 和 run-001 正式 CSV 冻结 SNR 集合及逐点 `N_total`，生成不可改写的追加配置清单 `outputs/plan-005/run-002/selection-1pct.json` 和 `configs/experiments/plan-005-tail-*.yaml`。
+3. 逐 SNR 执行追加正式 trial；输出到 `outputs/plan-005/run-002/tail/`，支持 checkpoint 续跑。
+4. 合并 run-001 与追加 trial，生成完整 BLER/NMSE CSV、主图及 1% 门限表；输出到 `outputs/plan-005/run-002/combined/`。
+5. 独立执行 RSRP 分布统计；输出到 `outputs/plan-005/run-002/rsrp-cdf/`。
+
+任何自动生成的正式配置都必须在对应仿真启动前落盘并记录 SHA-256。若 prescan 没有括住全部 1% 交越、逐点 drop 计划缺失、追加区间与旧区间重叠、合并后的 blocks 与计划不符，或任一 Rx/曲线的 RSRP 样本数不是 10000，则补充结果无效。
+
+快速补扫与正式尾部仿真允许由 `run_plan005_tail.ps1 -Phase auto-tail` 自动串联。该阶段必须先完整结束快速补扫，再生成 `selection-1pct.json` 和逐点冻结 YAML，随后才能启动第一个正式 SNR 点；若补扫未括住全部曲线的 1% BLER，则配置生成应报错并停止，不得以猜测网格继续正式仿真。
